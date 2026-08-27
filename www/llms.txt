@@ -1,0 +1,31 @@
+# OKCompressor / OKC
+
+OKC builds small reversible machines for information: compression experiments, byte rotors, corpus tools and reproducible research artifacts.
+
+## Important pages
+
+- /index.html — public shelf and current drops
+- /products/ock-rotor.html — OCK Rotor Free / source-commercial boundary
+- /licensing.html — Luna Non-Commons v1.1 and commercial boundary
+- /contact.html — inquiry/contact routes
+- /projects/tools.html — public tools
+
+## Current artifacts
+
+- OCK Rotor Free v0.4.0 — public experimental Linux x86_64 prerelease for arbitrary-file reversible byte-rotor experiments.
+  - Repository: https://github.com/OKCompressor/ock-rotor
+  - Release: https://github.com/OKCompressor/ock-rotor/releases/tag/v0.4.0
+  - Artifact ledger: https://github.com/OKCompressor/core/tree/main/drops/ock-rotor/v0.4.0
+- OKPass — PDF/TXT vocabulary extraction and passphrase/key-material generation.
+
+## Licensing
+
+- Luna Non-Commons License v1.1: https://github.com/OKCompressor/core/blob/main/docs/LICENSE.md
+- Human experimentation and independent use follow each artifact's published terms.
+- Commercial organizational use, source access, integration and technical transfer are separate agreement lanes.
+
+## Boundaries
+
+- Experimental software.
+- OCK Rotor is not audited encryption.
+- No behavioral tracking or registration is required by OKC for public artifacts.

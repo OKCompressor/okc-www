@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>zRank — OKCompressor</title>
+<meta name="description" content="zRank is a small reversible coding experiment packaged as a runnable OKC artifact.">
+<link rel="stylesheet" href="../assets/styles.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><a class="brand" href="../index.html"><span class="logo">OK</span><span>OKC</span></a><div class="links"><a href="../index.html#drops">Drops</a><a href="../index.html#proofs">Proofs</a><a href="../index.html#research">Research</a><a href="../projects/tools.html">Tools</a><a href="../contact.html">Contact</a></div></div></nav>
+<main data-release-page="zrank">
+<section class="hero product-hero">
+<div>
+<div class="kicker">Drop / tiny reversible coder</div>
+<h1>zRank<br><span class="codepath">.zrk</span></h1>
+<p class="lead">A compact coder experiment with an intentionally tiny surface: encode, containerize, decode, verify.</p>
+<div class="cta"><a class="btn primary" href="mailto:blue@okcompressor.com?subject=zRank%20source%20licence">Request source licence ↗</a><a class="btn" href="../index.html#drops">Back to shelf</a></div>
+</div>
+<div class="hero-card"><div class="terminal"><div><span class="prompt">$</span> zrank pack input/ -o sample.zrk</div><div>container → sample.zrk</div><div class="line-gap"></div><div><span class="prompt">$</span> zrank restore sample.zrk out/</div><div class="good">ROUNDTRIP: exact</div><div class="warn">RATIO: workload-dependent; no universal claim</div></div></div>
+</section>
+<section class="section split">
+<div><div class="kicker">What it is</div><h2>A toy you can actually falsify.</h2><p>A single-file reversible coding experiment. The canonical free release target is a Rust ELF for Linux x86_64. Multi-file packaging is a separate queued wrapper/container problem, not a current claim.</p></div>
+<div class="card"><div class="price-line"><span>Runnable artifact</span><strong>queued / €0</strong></div><div class="price-line"><span>Source licence</span><strong>inquiry</strong></div><div class="price-line"><span>Commercial integration</span><strong>contact</strong></div></div>
+</section>
+<section class="section">
+<div class="section-heading"><div><div class="kicker">Package contract</div><h2>Small surface. Explicit boundary.</h2></div></div>
+<div class="grid"><article class="card"><span class="tag">free artifact</span><h3>Run it</h3><p>Binary/demo and small fixtures when the drop is packaged.</p></article><article class="card"><span class="tag">receipt</span><h3>Verify it</h3><p>Hashes and restore commands are part of the product, not marketing garnish.</p></article><article class="card"><span class="tag">paid source</span><h3>Modify it</h3><p>Source snapshot and modification rights are separately licensed.</p></article></div>
+</section>
+<section class="section license-card"><strong>Licence boundary:</strong> the free artifact, source snapshot and commercial rights are separate things. Exact licence text ships with the release; see <a href="../licensing.html">LNCL / licensing</a>. No cryptographic-security claim is implied by reversibility or obfuscation.</section>
+<section class="section release-dynamic"><div class="kicker">Live release manifest</div><div data-release-page-summary class="card">Loading releases.json…</div></section>
+</main>
+<footer class="footer"><p class="small">© <span data-year></span> OKC / OKCompressor.</p><div class="footer-links"><a href="../index.html">Home</a><a href="../contact.html">Contact</a><a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a></div></footer>
+<script src="../assets/app.js"></script>
+</body></html>

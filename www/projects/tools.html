@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OKCompressor Tools — Reversible transforms and diagnostics</title>
+  <meta name="description" content="OKCompressor tools for bitpacking, reversible transforms, corpus inspection, tokenizer diagnostics and benchmark receipts.">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="../index.html"><span class="logo">OK</span><span>OKC</span></a>
+  <div class="links"><a href="../index.html#drops">Drops</a><a href="../index.html#proofs">Proofs</a><a href="../index.html#research">Research</a><a href="tools.html">Tools</a><a href="../contact.html">Contact</a></div>
+</div></nav>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="kicker">Toolbox / local-first</div>
+      <h1>Tools for inspectable pipelines.</h1>
+      <p class="lead">The OKC toolbox collects small reversible utilities around compact representation, corpus inspection, tokenizer pressure, binary/text roundtrips and benchmark economics.</p>
+      <div class="cta"><a class="btn primary" href="#modules">View modules ↓</a><a class="btn" href="../contact.html">Discuss a benchmark ↗</a></div>
+    </div>
+    <div class="hero-card"><div class="terminal">
+      <div><span class="prompt">$</span> okc inspect corpus.txt</div>
+      <div>bytes, chars, ids, rare ids, structure</div>
+      <div class="line-gap"></div>
+      <div><span class="prompt">$</span> okc pack stream.u32</div>
+      <div>bit-level transform + roundtrip receipt</div>
+      <div class="line-gap"></div>
+      <div><span class="prompt">$</span> okc compare baseline</div>
+      <div class="good">ratio · speed · memory · restore</div>
+    </div></div>
+  </section>
+
+  <section id="modules" class="section">
+    <div class="section-heading"><div><div class="kicker">Modules</div><h2>Small surfaces. Serious questions.</h2></div><p>Each tool exists to make a representation or claim easier to inspect, reproduce and price.</p></div>
+    <div class="grid stack-grid">
+      <article id="idstream" class="card stack-card"><span class="tag">format bridge</span><h3>IDStream</h3><p>Stable conversion between token IDs, packed integer streams, arrays and deterministic receipts.</p></article>
+      <article id="rengrams" class="card stack-card"><span class="tag">structure scan</span><h3>Rengrams</h3><p>Repeated symbolic-structure scanning with deterministic outputs other modules can consume.</p></article>
+      <article id="sentinel" class="card stack-card"><span class="tag">restore bridge</span><h3>Sentinel Lite</h3><p>Macro stream replacement and restoration: input IDs → macros → restored IDs → verification.</p></article>
+      <article id="redumb" class="card stack-card"><span class="tag">transform</span><h3>Redumb / DUMB</h3><p>Reversible baseline transforms for exact reconstruction, bitpacking and reproducibility checks.</p></article>
+      <article class="card stack-card"><span class="tag">diagnostics</span><h3>Vocabulary pressure</h3><p>Detect singleton/rare IDs, inspect active vocabulary pressure and produce readable report tables.</p></article>
+      <article class="card stack-card"><span class="tag">prediction</span><h3>TCN notes</h3><p>Small neural-prediction experiments over cleaner reversible streams, with claims kept deliberately narrow.</p></article>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div><div class="kicker">Benchmark lab</div><h2>Measure the economic outcome.</h2><p>Compression is not just a smaller file. Track bytes transferred, decode throughput, peak memory, metadata, random access, quality risk and the hardware cost a customer might avoid.</p><a class="btn primary" href="../contact.html">Request a measured pilot ↗</a></div>
+    <div class="terminal"><div><span class="prompt">$</span> okc report workload</div><div>baseline → transform → codec</div><div>ratio: recorded</div><div>decode: recorded</div><div>memory: recorded</div><div>restore: required</div><div class="warn">No receipt, no claim.</div></div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><div><div class="kicker">Commercial boundary</div><h2>Free surface, paid work.</h2></div></div>
+    <div class="license-card"><strong>Independent human use is free under project terms.</strong> Corporate evaluation, private runtimes, SaaS, internal automation, resale, integration or custom research requires a defined agreement where marked. Packaged artifacts may follow when stable; there is no paywall around the public proof trail.</div>
+  </section>
+</main>
+
+<footer class="footer"><p class="small">© <span data-year></span> OKC Labs / OKCompressor. Source-available research tooling. Free for humans, commercial use by agreement.</p><div class="footer-links"><a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/sponsors/OKCompressor" target="_blank" rel="noreferrer">Sponsors</a><a href="mailto:blue@okcompressor.com">blue@okcompressor.com</a></div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

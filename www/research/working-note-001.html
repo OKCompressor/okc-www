@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Working Note 001 — OKCompressor</title>
+<meta name="description" content="An evolving OKCompressor working note on reversible representations, structured streams and model-facing data.">
+<link rel="stylesheet" href="../assets/styles.css">  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><a class="brand" href="../index.html"><span class="logo">OK</span><span>OKC</span></a><div class="links"><a href="../index.html#drops">Drops</a><a href="../index.html#proofs">Proofs</a><a href="../index.html#research">Research</a><a href="../projects/tools.html">Tools</a><a href="../contact.html">Contact</a></div></div></nav>
+<main class="paper-shell">
+<section class="paper-head">
+<div class="kicker">Working Note 001 / under construction</div>
+<h1>Reversible representations<br>before the model.</h1>
+<p class="lead">A construction note, not a finished paper: what happens if the representation layer is treated as an explicit reversible machine rather than an invisible preprocessing footnote?</p>
+<div class="paper-meta"><span>OKCompressor</span><span>draft</span><span>version intentionally unstable</span></div>
+</section>
+
+<section class="paper-body">
+<h2>Abstract</h2>
+<p>OKC explores reversible transformations between raw data, structured token/ID streams, sidebands and model-facing representations. The central engineering constraint is exact recovery; the research question is whether structure exposed before entropy coding or prediction can improve inspectability, vocabulary pressure, latency, memory or downstream modelling in bounded regimes.</p>
+
+<h2>1. Construction premise</h2>
+<p>A representation should be measurable as a machine: input, state, output, inverse, delay, memory and failure conditions. Compression ratio alone is not enough to describe its deployment value.</p>
+
+<h2>2. Public proof trail</h2>
+<p>Rare1, Redumb/DUMB, IDStream and related public artifacts are partial evidence, not completion claims. The useful record includes what reconstructs exactly, what is benchmark-specific and what remains open.</p>
+<div class="note">This page is deliberately incomplete. Claims graduate only when a runnable receipt exists.</div>
+
+<h2>3. Current questions</h2>
+<ul class="list"><li>Which reversible transforms admit bounded-delay streaming?</li><li>When do sidebands reduce active representation pressure enough to matter downstream?</li><li>Can deeper structural analysis teach a smaller bounded runtime?</li><li>What should be stored or transmitted when the consumer is a model rather than a human parser?</li></ul>
+
+<h2>4. Commercial boundary</h2>
+<p>The public working note is not the private research dossier. Private prototypes, deeper architecture, scoped transfer and commercial implementation are separate engagements.</p>
+<div class="cta"><a class="btn primary" href="mailto:green@okcompressor.com?subject=OKC%20research%20dossier">Research / licensing ↗</a><a class="btn" href="../projects/rare1.html">Rare1 public RFC →</a></div>
+</section>
+</main>
+<footer class="footer"><p class="small">Working note. Construction visible. No universal performance claim.</p></footer>
+<script src="../assets/app.js"></script></body></html>

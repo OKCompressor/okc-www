@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "distribution_repo": "https://github.com/OKCompressor/core",
+  "license_page": "licensing.html",
+  "products": {
+    "zrank": {
+      "name": "zRank",
+      "ext": ".zrk",
+      "status": "queued",
+      "version": null,
+      "release_target": "Rust ELF · Linux x86_64",
+      "scope": "single-file reversible coder; multi-file wrapper/container queued",
+      "download": {
+        "label": "Free binary",
+        "price": "€0",
+        "primary": null,
+        "mirrors": []
+      },
+      "source": {
+        "python": {
+          "status": "optional",
+          "price": "inquiry",
+          "url": null
+        },
+        "rust": {
+          "status": "queued",
+          "price": "inquiry",
+          "url": null
+        }
+      },
+      "commercial": {
+        "label": "Commercial / integration",
+        "price": "quoted",
+        "url": "mailto:blue@okcompressor.com?subject=zRank%20commercial%20licence"
+      }
+    },
+    "doe": {
+      "name": "doe",
+      "ext": ".doe",
+      "status": "queued",
+      "version": null,
+      "release_target": "Rust ELF · Linux x86_64 + Working Note DOE-001",
+      "scope": "single-file reversible coder; paper-like reproducibility trail; multi-file wrapper queued",
+      "download": {
+        "label": "Free binary",
+        "price": "€0",
+        "primary": null,
+        "mirrors": []
+      },
+      "source": {
+        "python": {
+          "status": "optional",
+          "price": "inquiry",
+          "url": null
+        },
+        "rust": {
+          "status": "queued",
+          "price": "inquiry",
+          "url": null
+        }
+      },
+      "commercial": {
+        "label": "Commercial / integration",
+        "price": "quoted",
+        "url": "mailto:blue@okcompressor.com?subject=doe%20commercial%20licence"
+      }
+    },
+    "pongo": {
+      "name": "Pongo",
+      "ext": ".pong",
+      "status": "queued",
+      "version": null,
+      "release_target": "Runnable visual artifact · Linux first",
+      "scope": "reversible visual/output research toy",
+      "download": {
+        "label": "Free demo",
+        "price": "€0",
+        "primary": null,
+        "mirrors": []
+      },
+      "source": {
+        "python": {
+          "status": "if applicable",
+          "price": null,
+          "url": null
+        },
+        "rust": {
+          "status": "paid snapshot",
+          "price": "inquiry",
+          "url": null
+        }
+      },
+      "commercial": {
+        "label": "Commercial / integration",
+        "price": "quoted",
+        "url": "mailto:blue@okcompressor.com?subject=Pongo%20commercial%20licence"
+      }
+    },
+    "zxsynth": {
+      "name": "ZXSynth",
+      "ext": ".zxs",
+      "status": "public-prototype / advanced queued",
+      "version": null,
+      "release_target": "Public Python prototype + advanced native edition later",
+      "scope": "sound/data representation experiment; advanced compression-adjacent branch",
+      "download": {
+        "label": "Public prototype",
+        "price": "€0",
+        "primary": null,
+        "mirrors": []
+      },
+      "source": {
+        "python": {
+          "status": "public/prototype — link pending",
+          "price": "€0",
+          "url": null
+        },
+        "rust": {
+          "status": "advanced queued",
+          "price": "inquiry",
+          "url": null
+        }
+      },
+      "commercial": {
+        "label": "Commercial / research integration",
+        "price": "quoted",
+        "url": "mailto:blue@okcompressor.com?subject=ZXSynth%20commercial%20licence"
+      }
+    },
+    "ockrotor": {
+      "name": "OCK Rotor",
+      "ext": "OCKR4",
+      "status": "public-prerelease",
+      "version": "0.4.0",
+      "release_target": "Rust ELF · Linux x86_64",
+      "scope": "arbitrary-byte reversible rotor transform; OCKR4 container + toy tag; bidirectional Matrix visualization",
+      "download": {
+        "label": "Free personal prerelease",
+        "price": "€0",
+        "primary": "https://github.com/OKCompressor/ock-rotor/releases/download/v0.4.0/ock-rotor-v0.4.0-linux-x86_64.tar.gz",
+        "mirrors": [
+          {
+            "label": "core ledger",
+            "url": "https://github.com/OKCompressor/core/tree/main/drops/ock-rotor/v0.4.0"
+          },
+          {
+            "label": "raw mirror",
+            "url": "https://raw.githubusercontent.com/OKCompressor/core/main/drops/ock-rotor/v0.4.0/ock-rotor-v0.4.0-linux-x86_64.tar.gz"
+          }
+        ]
+      },
+      "source": {
+        "python": {
+          "status": "Matrix visual reference only",
+          "price": null,
+          "url": null
+        },
+        "rust": {
+          "status": "private / by inquiry",
+          "price": null,
+          "url": null
+        }
+      },
+      "commercial": {
+        "label": "Source / commercial / integration",
+        "price": "inquiry",
+        "url": "mailto:blue@okcompressor.com?subject=OCK%20Rotor%20source%20or%20commercial%20licence"
+      },
+      "repository": "https://github.com/OKCompressor/ock-rotor",
+      "release": "https://github.com/OKCompressor/ock-rotor/releases/tag/v0.4.0"
+    }
+  }
+}

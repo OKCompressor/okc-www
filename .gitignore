@@ -1,0 +1,11 @@
+www.pre-*/
+*.zip
+.netlify/
+
+# local operator material
+*.patch
+ops/
+www.bak-*/
+www.pre-*/
+*.zip
+.netlify/
