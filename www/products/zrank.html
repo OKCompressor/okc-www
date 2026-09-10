@@ -1,35 +1,79 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>zRank — OKCompressor</title>
-<meta name="description" content="zRank is a small reversible coding experiment packaged as a runnable OKC artifact.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0d">
+<meta name="description" content="zRank is an experimental reversible model transform in the OKC pipeline, designed to produce a downstream rank representation without owning the entropy backend.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="zRank — Experimental model pipe | OKC">
+<meta property="og:description" content="zRank is an experimental reversible model transform in the OKC pipeline, designed to produce a downstream rank representation without owning the entropy backend.">
+<meta name="twitter:card" content="summary">
+<title>zRank — Experimental model pipe | OKC</title>
+<link rel="icon" href="/favicon.svg">
 <link rel="stylesheet" href="../assets/styles.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/prime-subpages.css">
 </head>
 <body>
-<nav class="nav"><div class="nav-inner"><a class="brand" href="../index.html"><span class="logo">OK</span><span>OKC</span></a><div class="links"><a href="../index.html#drops">Drops</a><a href="../index.html#proofs">Proofs</a><a href="../index.html#research">Research</a><a href="../projects/tools.html">Tools</a><a href="../contact.html">Contact</a></div></div></nav>
-<main data-release-page="zrank">
+<nav class="nav"><div class="nav-inner">
+<a class="brand" href="../v1g-prime/"><span class="logo">OKC</span><span>/LAB</span></a>
+<div class="links">
+<a href="../v1g-prime/#scale">Benchmarks</a>
+<a href="../v1g-prime/#playground">Lab</a>
+<a href="../v1g-prime/#research">Research</a>
+<a href="../v1g-prime/#build">Build</a>
+</div>
+</div></nav>
+<main>
+
 <section class="hero product-hero">
 <div>
-<div class="kicker">Drop / tiny reversible coder</div>
-<h1>zRank<br><span class="codepath">.zrk</span></h1>
-<p class="lead">A compact coder experiment with an intentionally tiny surface: encode, containerize, decode, verify.</p>
-<div class="cta"><a class="btn primary" href="mailto:blue@okcompressor.com?subject=zRank%20source%20licence">Request source licence ↗</a><a class="btn" href="../index.html#drops">Back to shelf</a></div>
+<div class="kicker">Experimental module / model pipe</div>
+<h1>zRank<br><span class="codepath">model context. Keep entropy optional.</span></h1>
+<p class="lead">zRank is not the compressor at the end of the line. It is an experimental reversible model transform: consume an ID stream, emit a rank-oriented representation plus model state, then hand the result to whatever downstream coder earns its place.</p>
+<div class="cta">
+<a class="btn primary" href="mailto:blue@okcompressor.com?subject=zRank%20research%20or%20integration">Research / integration ↗</a>
+<a class="btn" href="/v1g-prime/#research">Back to Research</a>
 </div>
-<div class="hero-card"><div class="terminal"><div><span class="prompt">$</span> zrank pack input/ -o sample.zrk</div><div>container → sample.zrk</div><div class="line-gap"></div><div><span class="prompt">$</span> zrank restore sample.zrk out/</div><div class="good">ROUNDTRIP: exact</div><div class="warn">RATIO: workload-dependent; no universal claim</div></div></div>
+<div class="prime-badges"><span>MODEL</span><span>REVERSIBLE</span><span>EXPERIMENTAL</span></div>
+</div>
+<div class="hero-card"><div class="terminal">
+<div>ID stream</div>
+<div>  ↓</div>
+<div><span class="prompt">[ zRank ]</span></div>
+<div>  ↓</div>
+<div>rank stream + explicit model</div>
+<div>  ↓</div>
+<div><span class="good">entropy backend is replaceable</span></div>
+</div></div>
 </section>
+
 <section class="section split">
-<div><div class="kicker">What it is</div><h2>A toy you can actually falsify.</h2><p>A single-file reversible coding experiment. The canonical free release target is a Rust ELF for Linux x86_64. Multi-file packaging is a separate queued wrapper/container problem, not a current claim.</p></div>
-<div class="card"><div class="price-line"><span>Runnable artifact</span><strong>queued / €0</strong></div><div class="price-line"><span>Source licence</span><strong>inquiry</strong></div><div class="price-line"><span>Commercial integration</span><strong>contact</strong></div></div>
+<div><div class="kicker">Module boundary</div><h2>A model plug, not another monolith.</h2>
+<p>Current research treats model build, encode, decode, sidebands and entropy as separate costs. That keeps zRank useful even when the downstream coder changes.</p></div>
+<div class="prime-module-flow"><b>STRUCTURE</b> → optional filters → <b>MODEL</b> → entropy<br><br>DU3 → [Rare1] → [zRank] → [zstd / future backend]</div>
 </section>
+
 <section class="section">
-<div class="section-heading"><div><div class="kicker">Package contract</div><h2>Small surface. Explicit boundary.</h2></div></div>
-<div class="grid"><article class="card"><span class="tag">free artifact</span><h3>Run it</h3><p>Binary/demo and small fixtures when the drop is packaged.</p></article><article class="card"><span class="tag">receipt</span><h3>Verify it</h3><p>Hashes and restore commands are part of the product, not marketing garnish.</p></article><article class="card"><span class="tag">paid source</span><h3>Modify it</h3><p>Source snapshot and modification rights are separately licensed.</p></article></div>
+<div class="section-heading"><div><div class="kicker">Research lane</div><h2>Interesting intermediates still count.</h2></div><p>Model/rank size, build cost, inverse cost and entropy response are measured separately. A smaller intermediate is not silently called a complete archive.</p></div>
+<div class="grid">
+<article class="card"><span class="tag">model</span><h3>Explicit state</h3><p>The model travels as a named artifact rather than invisible decoder knowledge.</p></article>
+<article class="card"><span class="tag">inverse</span><h3>Exact gate</h3><p>Encode and decode are independently testable before a downstream codec is added.</p></article>
+<article class="card"><span class="tag">future</span><h3>Pluggable downstream</h3><p>LZ, RLE, ANS-class coders or future domain coders can be tested without redefining zRank itself.</p></article>
+</div>
 </section>
-<section class="section license-card"><strong>Licence boundary:</strong> the free artifact, source snapshot and commercial rights are separate things. Exact licence text ships with the release; see <a href="../licensing.html">LNCL / licensing</a>. No cryptographic-security claim is implied by reversibility or obfuscation.</section>
-<section class="section release-dynamic"><div class="kicker">Live release manifest</div><div data-release-page-summary class="card">Loading releases.json…</div></section>
+
 </main>
-<footer class="footer"><p class="small">© <span data-year></span> OKC / OKCompressor.</p><div class="footer-links"><a href="../index.html">Home</a><a href="../contact.html">Contact</a><a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a></div></footer>
+<footer class="footer">
+<p>Built in Galicia · local-first systems research.</p>
+<div class="footer-links">
+<a href="../v1g-prime/">OKC</a>
+<a href="../licensing.html">Licensing</a>
+<a href="../contact.html">Contact</a>
+<a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a>
+</div>
+</footer>
 <script src="../assets/app.js"></script>
-</body></html>
+</body>
+</html>

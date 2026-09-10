@@ -1,79 +1,90 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Rare1 — Reversible rare-token sidebands</title>
-  <meta name="description" content="OKC Rare1 RFC: reversible rare-token sidebands for exact stream reconstruction and vocabulary-pressure experiments.">
-  <link rel="stylesheet" href="../assets/styles.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0d">
+<meta name="description" content="Rare1 is an optional reversible long-tail transform for ID streams. Current Rust validation is separate from the historical public Python/RFC line.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rare1 — Long-tail transform research | OKC">
+<meta property="og:description" content="Rare1 is an optional reversible long-tail transform for ID streams. Current Rust validation is separate from the historical public Python/RFC line.">
+<title>Rare1 — Long-tail transform research | OKC</title>
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/prime-subpages.css">
 </head>
 <body>
-
 <nav class="nav"><div class="nav-inner">
-  <a class="brand" href="../index.html"><span class="logo">OK</span><span>OKC</span></a>
-  <div class="links"><a href="../index.html#drops">Drops</a><a href="../index.html#proofs">Proofs</a><a href="../index.html#research">Research</a><a href="tools.html">Tools</a><a href="../contact.html">Contact</a></div>
+<a class="brand" href="../v1g-prime/"><span class="logo">OKC</span><span>/LAB</span></a>
+<div class="links">
+<a href="../v1g-prime/#scale">Benchmarks</a>
+<a href="../v1g-prime/#playground">Lab</a>
+<a href="../v1g-prime/#research">Research</a>
+<a href="../v1g-prime/#build">Build</a>
+</div>
 </div></nav>
-
 <main>
-  <section class="hero">
-    <div>
-      <div class="kicker">Spearhead project / public RFC</div>
-      <h1>Rare1<br><span class="codepath">reversible sidebands.</span></h1>
-      <p class="lead">Rare1 separates rare or singleton token IDs into a sideband while preserving exact reconstruction. The purpose is structural: test whether reducing common-vocabulary pressure makes downstream streams easier to inspect or predict.</p>
-      <div class="cta"><a class="btn primary" href="https://github.com/OKCompressor/okc_rare1_rfc_public_repo" target="_blank" rel="noreferrer">Open GitHub repo ↗</a><a class="btn" href="https://github.com/OKCompressor/okc_rare1_rfc_public_repo/blob/main/docs/OKC_TCN_RFC_PUBLIC_NOTE.md" target="_blank" rel="noreferrer">Read TCN note ↗</a><a class="btn" href="../contact.html">Discuss validation</a></div>
-    </div>
-    <div class="hero-card"><div class="terminal">
-      <div><span class="prompt">$</span> okc rare1 validate enwik7</div>
-      <div class="good">PASS: exact reconstruction</div>
-      <div class="good">PASS: rare id sideband roundtrip</div>
-      <div class="line-gap"></div>
-      <div>rare/singleton ids → sideband</div>
-      <div>common stream → lower active pressure</div>
-      <div>decoder → original ID sequence</div>
-      <div class="warn">STATUS: RFC, not universal claim.</div>
-    </div></div>
-  </section>
 
-  <section class="section">
-    <div class="section-heading"><div><div class="kicker">Validated context</div><h2>Evidence with its boundary attached.</h2></div><p>These are reproducible experiment notes, not a claim that Rare1 replaces BPE, SentencePiece, zstd or production tokenizers.</p></div>
-    <table class="table">
-      <tr><th>Area</th><th>Status</th><th>Meaning</th></tr>
-      <tr><td>DUMB / Redumb u32 roundtrip</td><td class="good">PASS</td><td>Encoded streams can be reconstructed exactly in the current validation setup.</td></tr>
-      <tr><td>Rare1 ID reconstruction</td><td class="good">PASS</td><td>Rare-token sideband reconstruction works on the current RFC corpus target.</td></tr>
-      <tr><td>Tiny TCN benchmark</td><td class="warn">INITIAL</td><td>Useful benchmark context; not a final performance or tokenizer claim.</td></tr>
-    </table>
-  </section>
+<section class="hero">
+<div>
+<div class="kicker">Active R&D module / optional filter</div>
+<h1>Rare1<br><span class="codepath">reduce the active tail.</span></h1>
+<p class="lead">Rare1 is a reversible long-tail transform for ID streams. Its job is narrow: move rare events out of the active modeled vocabulary through an explicit sideband, then reconstruct the original sequence exactly.</p>
+<div class="cta">
+<a class="btn primary" href="mailto:blue@okcompressor.com?subject=Rare1%20module%20research">Discuss the module ↗</a>
+<a class="btn" href="../v1g-prime/#research">Research shelf</a>
+</div>
+<div class="prime-badges"><span>OPTIONAL PIPE</span><span>EXACT INVERSE</span><span>RUST VALIDATION</span></div>
+</div>
+<div class="hero-card"><div class="terminal">
+<div>global ID stream</div>
+<div>      ↓</div>
+<div><span class="prompt">[ Rare1 ]</span></div>
+<div>      ├─ active stream</div>
+<div>      └─ explicit rare sideband</div>
+<div class="line-gap"></div>
+<div class="good">inverse → original ID sequence</div>
+</div></div>
+</section>
 
-  <section class="section">
-    <div class="section-heading"><div><div class="kicker">Observed experiment</div><h2>Small signal. Exact restore.</h2></div><p>In the controlled enwik7 tiny-TCN comparison, the same active vocabulary was used for the tested paths.</p></div>
-    <div class="grid two">
-      <div class="card"><span class="tag">Rare1</span><h3>Approximately 1.939 bits/byte</h3><p>Observed under the documented tiny-TCN configuration, with exact ID-stream reconstruction.</p></div>
-      <div class="card"><span class="tag">SentencePiece BPE</span><h3>Approximately 2.243 bits/byte</h3><p>The comparison baseline for that specific benchmark, not a universal tokenizer ranking.</p></div>
-    </div>
-    <div class="note" style="margin-top:18px">Approximate difference observed: 13.6% favourable to Rare1 under this metric and configuration. Independent reproduction remains the point.</div>
-  </section>
+<section class="section split">
+<div>
+<div class="kicker">Current architecture</div>
+<h2>A pipe, not a dependency.</h2>
+<p>The current Rust line is being validated as an independent reversible transform. Rare1 can sit after DU3, before a model, or stay out of the pipeline entirely. The surrounding stages remain replaceable.</p>
+<p>Global correctness and bounded execution are separate concerns: the logical decision can cover the declared scope while implementation remains chunk-aware and memory-bounded.</p>
+</div>
+<div class="prime-module-flow"><b>DU3</b> → [Rare1] → [model] → [entropy]<br><br>optional · typed · independently reversible</div>
+</section>
 
-  <section class="section">
-    <div class="section-heading"><div><div class="kicker">Open validation targets</div><h2>What still needs testing.</h2></div><p>Scale, compare and measure the costs that a ratio alone hides.</p></div>
-    <div class="grid">
-      <article class="card"><h3>Scale the corpus</h3><p>enwik8/enwik9 tests with vocabulary pressure, sideband cost, speed, memory and failure modes.</p></article>
-      <article class="card"><h3>Compare tokenizers</h3><p>BPE and Unigram comparisons across token count, vocabulary, exactness, speed and memory.</p></article>
-      <article class="card"><h3>Profile local hardware</h3><p>ARM, edge and local AI measurements where bandwidth and memory matter more than raw storage.</p></article>
-    </div>
-  </section>
+<section class="section">
+<div class="section-heading">
+<div><div class="kicker">R&D lineage</div><h2>Keep evidence. Do not inherit the monolith.</h2></div>
+<p>Older experiments remain useful as prior engineering evidence, not as architecture we are obligated to reproduce.</p>
+</div>
+<div class="grid">
+<article class="card"><span class="tag">current</span><h3>Rust Rare1</h3><p>Active validation line: exact apply/inverse, explicit stream and sideband contracts, implementation still being bounded.</p></article>
+<article class="card"><span class="tag">historical</span><h3>Public Python / RFC</h3><p>The older public implementation and notes preserve prior behavior and results. They are not the current release implementation.</p><a href="https://github.com/OKCompressor/okc_rare1_rfc_public_repo" target="_blank" rel="noreferrer">Historical RFC line ↗</a></article>
+<article class="card"><span class="tag">historical</span><h3>Ganymede</h3><p>An integrated R&D experiment showing that useful compositions can exist. Evidence quarry, not the production topology.</p></article>
+</div>
+</section>
 
-  <section class="section">
-    <div class="section-heading"><div><div class="kicker">Claim boundary</div><h2>What Rare1 is — and is not.</h2></div></div>
-    <div class="grid two">
-      <div class="card"><h3>Allowed</h3><ul class="list"><li>Reversible RFC and validation target.</li><li>Exact reconstruction in the tested setup.</li><li>Rare-token sideband experiment.</li><li>Vocabulary-pressure hypothesis for small/local regimes.</li></ul></div>
-      <div class="card"><h3>Not claimed</h3><ul class="list"><li>No universal win over BPE or SentencePiece.</li><li>No production-readiness claim.</li><li>No SOTA tokenizer claim.</li><li>No replacement claim for gzip, xz or zstd.</li></ul></div>
-    </div>
-  </section>
+<section class="section split">
+<div><div class="kicker">Public boundary</div><h2>Contract outside. Scheduling inside.</h2><p>Public material can describe scope, sidebands, exactness and module boundaries. Low-level reconciliation and relay choices stay in the private engineering notebook until the design stabilizes.</p></div>
+<div class="card"><span class="tag">Next gate</span><h3>Independent release</h3><p>When the Rust implementation clears bounded-memory and release receipts, it should ship from its own repository with its own version, checksum and tests.</p></div>
+</section>
 
-  <section class="section drop-card"><div class="kicker">Public record</div><h2>Read the receipts.</h2><p><a href="https://github.com/OKCompressor/okc_rare1_rfc_public_repo/blob/main/docs/OKC_TCN_RFC_PUBLIC_NOTE.md" target="_blank" rel="noreferrer">TCN RFC note ↗</a> · <a href="https://github.com/OKCompressor/okc_rare1_rfc_public_repo/blob/main/docs/RARE1_RESULTS_PRETTY.md" target="_blank" rel="noreferrer">Rare1 results ↗</a></p></section>
 </main>
-
-<footer class="footer"><p class="small">© <span data-year></span> OKC Labs / OKCompressor. Source-available research tooling. Free for humans, commercial use by agreement.</p><div class="footer-links"><a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/sponsors/OKCompressor" target="_blank" rel="noreferrer">Sponsors</a><a href="mailto:blue@okcompressor.com">blue@okcompressor.com</a></div></footer>
+<footer class="footer">
+<p>Built in Galicia · reversible systems for local, edge and federated compute.</p>
+<div class="footer-links">
+<a href="../v1g-prime/">OKC</a>
+<a href="../licensing.html">Licensing</a>
+<a href="../contact.html">Contact</a>
+<a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a>
+</div>
+</footer>
 <script src="../assets/app.js"></script>
 </body>
 </html>

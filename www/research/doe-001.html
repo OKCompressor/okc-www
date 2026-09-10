@@ -1,33 +1,81 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DOE-001 — OKCompressor Working Note</title>
-<meta name="description" content="DOE-001: a construction-visible working note accompanying the doe reversible coder.">
-<link rel="stylesheet" href="../assets/styles.css"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
-</head><body>
-<nav class="nav"><div class="nav-inner"><a class="brand" href="../index.html"><span class="logo">OK</span><span>OKC</span></a>
-<div class="links"><a href="../index.html#drops">Drops</a><a href="../index.html#proofs">Proofs</a><a href="../index.html#research">Research</a><a href="../projects/tools.html">Tools</a><a href="../contact.html">Contact</a></div></div></nav>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0d">
+<meta name="description" content="DOE-001 is a reproducibility-first working note for a reversible coding experiment: format and inverse before ranking claims.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOE-001 — Reversible coder working note | OKC">
+<meta property="og:description" content="DOE-001 is a reproducibility-first working note for a reversible coding experiment: format and inverse before ranking claims.">
+<title>DOE-001 — Reversible coder working note | OKC</title>
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/prime-subpages.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="brand" href="../v1g-prime/"><span class="logo">OKC</span><span>/LAB</span></a>
+<div class="links">
+<a href="../v1g-prime/#scale">Benchmarks</a>
+<a href="../v1g-prime/#playground">Lab</a>
+<a href="../v1g-prime/#research">Research</a>
+<a href="../v1g-prime/#build">Build</a>
+</div>
+</div></nav>
 <main>
-<section class="hero product-hero"><div>
-<div class="kicker">Independent Working Note / DOE-001 / under construction</div>
-<h1>doe:<br><span class="codepath">a reversible experiment, left unsterilised.</span></h1>
-<p class="lead">A reproducibility-first note for a small coder: specification before prestige, reconstruction before ratio, failure cases kept visible.</p>
-</div><div class="hero-card"><div class="terminal">
-<div>STATUS      : construction visible</div>
-<div>IMPLEMENT.  : pending canonical release</div>
-<div>CLAIMS      : none until reproduced</div>
-<div>BENCHMARKS  : enwik fixtures planned</div>
-<div>RESTORE     : byte equality required</div>
-</div></div></section>
-<section class="section">
-<div class="grid two">
-<article class="card"><h3>Abstract</h3><p>This note will state only what the released implementation and fixtures support. No compression ranking is inferred from a single corpus.</p></article>
-<article class="card"><h3>Method</h3><p>Format definition, encoder/decoder contract, exact reconstruction receipt, environment, corpus hashes, command lines and observed measurements.</p></article>
-<article class="card"><h3>Evaluation</h3><p>Start with reproducible enwik fixtures and per-file tests. Multi-file/container behaviour is a separate experiment, not silently folded into the coder.</p></article>
-<article class="card"><h3>Adverse results</h3><p>Inputs where the coder loses, expands, slows down or behaves awkwardly stay in the note. Negative results are part of the artifact.</p></article>
+
+<section class="hero">
+<div>
+<div class="kicker">DOE-001 / reproducibility note</div>
+<h1>doe:<br><span class="codepath">leave the losses visible.</span></h1>
+<p class="lead">A small reversible-coder note where specification comes before prestige, reconstruction before ratio, and adverse results stay attached to the artifact.</p>
+<div class="prime-badges"><span>WORKING NOTE</span><span>BYTE EQUALITY REQUIRED</span><span>NEGATIVE RESULTS KEPT</span></div>
+</div>
+<div class="hero-card"><div class="terminal">
+<div>STATUS     construction visible</div>
+<div>CLAIMS     bounded by released receipts</div>
+<div>RESTORE    byte equality required</div>
+<div>BENCH      reproducible fixtures</div>
+<div class="line-gap"></div>
+<div class="good">failure is data</div>
+</div></div>
+</section>
+
+<section class="section paper-shell">
+<div class="kicker">Abstract</div>
+<h2>The artifact is primary.</h2>
+<p>DOE-001 records a reversible experiment through its format, encoder/decoder contract, fixtures and observed measurements. No compression ranking is inferred from a single corpus or a convenient winning row.</p>
+
+<h2>Method</h2>
+<p>Name the format. Define the inverse. Record corpus identity, environment, command line, wall time, memory and exact reconstruction. Keep packaging and multifile behavior separate unless they are explicitly part of the tested format.</p>
+
+<h2>Evaluation</h2>
+<p>Start with reproducible fixtures and compare against obvious baselines. Bytes, encode wall, decode wall, memory and reconstruction are separate dimensions; a result that wins one axis does not silently win the others.</p>
+
+<h2>Adverse results</h2>
+<p>Inputs where the coder expands, slows down or becomes awkward remain in the note. Negative results narrow the design space and are therefore part of the engineering asset.</p>
+
+<h2>Graduation rule</h2>
+<p>If a mechanism survives exactness and benchmark gates, extract the useful mechanism into a standalone module. Do not preserve accidental coupling merely because the prototype once worked.</p>
+
+<div class="cta">
+<a class="btn primary" href="../products/doe.html">DOE artifact →</a>
+<a class="btn" href="../v1g-prime/#research">Research shelf</a>
 </div>
 </section>
-<section class="section note"><strong>Academic theatre inversion:</strong> the artifact is primary; the paper earns authority only by making the machine easier to falsify.</section>
+
 </main>
-<footer class="footer"><p class="small">DOE-001 · OKC independent working note.</p></footer>
-<script src="../assets/app.js"></script></body></html>
+<footer class="footer">
+<p>Built in Galicia · reversible systems for local, edge and federated compute.</p>
+<div class="footer-links">
+<a href="../v1g-prime/">OKC</a>
+<a href="../licensing.html">Licensing</a>
+<a href="../contact.html">Contact</a>
+<a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a>
+</div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

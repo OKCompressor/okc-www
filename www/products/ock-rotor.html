@@ -1,125 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OCK Rotor — OKCompressor</title>
-<meta name="description" content="OCK Rotor is an educational reversible byte-rotor prerelease with an OCKR4 container and living Matrix visualization.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0d">
+<meta name="description" content="OCK Rotor is a public experimental Rust byte-rotor with a tagged reversible container, exact restore path and living byte-frontier visualization.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OCK Rotor — Reversible byte machine | OKC">
+<meta property="og:description" content="OCK Rotor is a public experimental Rust byte-rotor with a tagged reversible container, exact restore path and living byte-frontier visualization.">
+<meta name="twitter:card" content="summary">
+<title>OCK Rotor — Reversible byte machine | OKC</title>
+<link rel="icon" href="/favicon.svg">
 <link rel="stylesheet" href="../assets/styles.css">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/prime-subpages.css">
 </head>
 <body>
-<nav class="nav"><div class="nav-inner"><a class="brand" href="../index.html"><span class="logo">OK</span><span>OKC</span></a><div class="links"><a href="../index.html#drops">Drops</a><a href="../index.html#proofs">Proofs</a><a href="../index.html#research">Research</a><a href="../projects/tools.html">Tools</a><a href="../contact.html">Contact</a></div></div></nav>
+<nav class="nav"><div class="nav-inner">
+<a class="brand" href="../v1g-prime/"><span class="logo">OKC</span><span>/LAB</span></a>
+<div class="links">
+<a href="../v1g-prime/#scale">Benchmarks</a>
+<a href="../v1g-prime/#playground">Lab</a>
+<a href="../v1g-prime/#research">Research</a>
+<a href="../v1g-prime/#build">Build</a>
+</div>
+</div></nav>
+<main>
 
-<main data-release-page="ockrotor">
 <section class="hero product-hero">
 <div>
-<div class="kicker">Drop / reversible byte rotor prerelease</div>
-<h1>OCK Rotor<br><span class="codepath">OCKR4</span></h1>
-<p class="lead">A small Rust rotor machine for arbitrary bytes: encode, tag, inspect the moving frontier, decode, and demand the exact bytes back.</p>
-<p class="hero-note"><strong>Educational crypto.</strong> Runnable mechanism, explicit restore path, no claim of modern audited encryption.</p>
+<div class="kicker">Released research artifact / byte machine</div>
+<h1>OCK Rotor<br><span class="codepath">watch the bytes move.</span></h1>
+<p class="lead">A small Rust rotor machine for arbitrary bytes: encode, tag, inspect the moving frontier, decode, and demand the exact bytes back. Educational machinery, not audited modern encryption.</p>
 <div class="cta">
-  <a class="btn primary" href="https://github.com/OKCompressor/ock-rotor/releases/tag/v0.4.0" target="_blank" rel="noreferrer">Get v0.4.0 ↘</a>
-  <a class="btn" href="https://github.com/OKCompressor/ock-rotor" target="_blank" rel="noreferrer">Public repo ↗</a>
-  <a class="btn ghost" href="mailto:blue@okcompressor.com?subject=OCK%20Rotor%20source%20or%20commercial%20licence">Source / commercial ↗</a>
+<a class="btn primary" href="https://github.com/OKCompressor/ock-rotor/releases/tag/v0.4.0" target="_blank" rel="noreferrer">Get v0.4.0 ↘</a>
+<a class="btn" href="https://github.com/OKCompressor/ock-rotor" target="_blank" rel="noreferrer">Public repo ↗</a>
+<a class="btn" href="mailto:blue@okcompressor.com?subject=OCK%20Rotor%20custom%20variant">Custom / integration ↗</a>
 </div>
+<div class="prime-badges"><span>RUST</span><span>BYTE-EXACT</span><span>PUBLIC TOY</span></div>
 </div>
-
 <div class="hero-card"><div class="terminal">
-<div><span class="prompt">$</span> ock-byte-rotor -m encode ...</div>
-<div>plaintext → OCKR4</div>
+<div><span class="prompt">$</span> ock-byte-rotor encode</div>
+<div>bytes → OCKR4 container</div>
+<div>rotors · rounds · nonce · tag</div>
 <div class="line-gap"></div>
-<div>⚙ generated 256-byte rotors</div>
-<div>↻ dynamic per-byte rounds</div>
-<div>⬢ arbitrary byte streams</div>
-<div>✓ tag verified before decode</div>
-<div class="good">✓ BYTE-PERFECT RESTORE</div>
-<div class="warn">SECURITY: educational / unaudited</div>
+<div><span class="prompt">$</span> ock-byte-rotor decode</div>
+<div class="good">byte-perfect restore</div>
+<div class="warn">educational / unaudited security</div>
 </div></div>
 </section>
 
 <section class="section split">
-<div>
-  <div class="kicker">What exists now</div>
-  <h2>The rotor is real; the gears are later.</h2>
-  <p>Current v0.4.0 handles raw byte streams, generates one or more 256-byte rotors, applies dynamic per-byte rounds, stores nonce/round/rotor parameters in an OCKR4 container and verifies a 32-byte toy tag before decoding.</p>
-  <p>The living Matrix renderer replays both encode and decode as a sliding hexdump frontier. The transform core remains Rust; the current visual reference is Python.</p>
+<div><div class="kicker">Living receipt</div><h2>The byte frontier is part of the demo.</h2>
+<p>The transform core remains Rust. The visual trace makes encode and decode inspectable as a moving hexdump instead of hiding the mechanism behind one ratio.</p>
+<div class="media-frame"><video controls muted loop playsinline preload="metadata"><source src="../assets/media/ock-readme-roundtrip.webm" type="video/webm">Your browser does not support WebM video.</video></div>
 </div>
 <div class="card">
-  <div class="price-line"><span>Current crate / CLI</span><strong>ock-byte-rotor 0.4.0</strong></div>
-  <div class="price-line"><span>Public display name</span><strong>OCK Rotor</strong></div>
-  <div class="price-line"><span>Container</span><strong>OCKR4</strong></div>
-  <div class="price-line"><span>Linux artifact</span><strong>v0.4.0 · public</strong></div>
-  <div class="price-line"><span>Rust source</span><strong>by inquiry</strong></div>
+<span class="tag">Premium path</span><h3>Interested in the mechanism, not the toy?</h3>
+<p>Commission a domain-specific reversible byte transform, container or visualization. Public proof and commercial integration remain separate surfaces.</p>
+<a href="../contact.html">Discuss a build →</a>
 </div>
 </section>
 
 <section class="section">
-<div class="section-heading">
-  <div><div class="kicker">Matrix / living receipt</div><h2>Watch the bytes move, then come home.</h2></div>
-  <p>The visual is a sampled terminal trace of the same roundtrip story: plaintext → ciphertext → plaintext.</p>
-</div>
-
-<div class="matrix-media">
-  <video controls muted loop playsinline preload="metadata">
-    <source src="../assets/media/ock-readme-roundtrip.webm" type="video/webm">
-    Your browser does not support WebM video.
-  </video>
-  <div class="small">WebM preferred for the site. GIF fallback: <a href="../assets/media/ock-readme-roundtrip.gif">ock-readme-roundtrip.gif</a>.</div>
+<div class="grid">
+<article class="card"><span class="tag">container</span><h3>OCKR4</h3><p>Named parameters and restoration data travel with the artifact.</p></article>
+<article class="card"><span class="tag">visual</span><h3>Frontier trace</h3><p>Sampled encode/decode state stays human-inspectable.</p></article>
+<article class="card"><span class="tag">boundary</span><h3>No crypto theatre</h3><p>Reversible machinery is useful without pretending it is audited cryptography.</p></article>
 </div>
 </section>
 
-<section class="section">
-<div class="section-heading"><div><div class="kicker">CLI / current prerelease</div><h2>Tiny surface. Exact return.</h2></div></div>
-
-<div class="grid three">
-<article class="card">
-<span class="tag">encode</span>
-<h3>Bytes in</h3>
-<pre><code>ock-byte-rotor -m encode \
-  --key-ints "233969659 753251273 593294788 325244558 296780300 467383710" \
-  -i plain.txt -o cipher.ock</code></pre>
-</article>
-
-<article class="card">
-<span class="tag">decode</span>
-<h3>Bytes back</h3>
-<pre><code>ock-byte-rotor -m decode \
-  --key-ints "233969659 753251273 593294788 325244558 296780300 467383710" \
-  -i cipher.ock -o restored.txt</code></pre>
-</article>
-
-<article class="card">
-<span class="tag">receipt</span>
-<h3>Falsify it</h3>
-<pre><code>cmp plain.txt restored.txt
-echo $?</code></pre>
-<p>Zero means the byte stream returned exactly.</p>
-</article>
-</div>
-</section>
-
-<section class="section">
-<div class="section-heading"><div><div class="kicker">OCKR4 / current boundary</div><h2>What the container says.</h2></div></div>
-<div class="grid three">
-<article class="card"><span class="tag">header</span><h3>16 bytes</h3><p><code>OCKR4\0</code> magic, 64-bit little-endian nonce, one-byte round count and one-byte rotor count.</p></article>
-<article class="card"><span class="tag">body</span><h3>N bytes</h3><p>The transformed payload stays byte-for-byte length-preserving inside the container body.</p></article>
-<article class="card"><span class="tag">tail</span><h3>32-byte toy tag</h3><p>Decode verifies the tag before transforming the payload back. It is not presented as a modern audited MAC.</p></article>
-</div>
-</section>
-
-<section class="section license-card">
-<strong>Prerelease boundary:</strong> runnable personal-scale artifacts can be free while source access, commercial integration and technical transfer remain separately licensed. See <a href="../licensing.html">Luna Non-Commons v1.1 / licensing</a> and the <a href="https://github.com/OKCompressor/ock-rotor" target="_blank" rel="noreferrer">public Rotor repository</a>.
-</section>
-
-<section class="section release-dynamic">
-<div class="kicker">Live release manifest</div>
-<div data-release-page-summary class="card">Loading releases.json…</div>
-</section>
 </main>
-
 <footer class="footer">
-<p class="small">© <span data-year></span> OKC / OKCompressor. OCK Rotor is an experimental prerelease.</p>
-<div class="footer-links"><a href="../index.html">Home</a><a href="../licensing.html">Licensing</a><a href="../contact.html">Contact</a><a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a></div>
+<p>Built in Galicia · local-first systems research.</p>
+<div class="footer-links">
+<a href="../v1g-prime/">OKC</a>
+<a href="../licensing.html">Licensing</a>
+<a href="../contact.html">Contact</a>
+<a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a>
+</div>
 </footer>
 <script src="../assets/app.js"></script>
 </body>

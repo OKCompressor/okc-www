@@ -1,63 +1,85 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>OKCompressor Tools — Reversible transforms and diagnostics</title>
-  <meta name="description" content="OKCompressor tools for bitpacking, reversible transforms, corpus inspection, tokenizer diagnostics and benchmark receipts.">
-  <link rel="stylesheet" href="../assets/styles.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0d">
+<meta name="description" content="OKC Lab collects reversible structure, model, format and benchmarking tools designed as composable pipes with explicit receipts and inverses.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OKC Lab — Inspectable codec pipes and tools">
+<meta property="og:description" content="OKC Lab collects reversible structure, model, format and benchmarking tools designed as composable pipes with explicit receipts and inverses.">
+<meta name="twitter:card" content="summary">
+<title>OKC Lab — Inspectable codec pipes and tools</title>
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/prime-subpages.css">
 </head>
 <body>
-
 <nav class="nav"><div class="nav-inner">
-  <a class="brand" href="../index.html"><span class="logo">OK</span><span>OKC</span></a>
-  <div class="links"><a href="../index.html#drops">Drops</a><a href="../index.html#proofs">Proofs</a><a href="../index.html#research">Research</a><a href="tools.html">Tools</a><a href="../contact.html">Contact</a></div>
+<a class="brand" href="../v1g-prime/"><span class="logo">OKC</span><span>/LAB</span></a>
+<div class="links">
+<a href="../v1g-prime/#scale">Benchmarks</a>
+<a href="../v1g-prime/#playground">Lab</a>
+<a href="../v1g-prime/#research">Research</a>
+<a href="../v1g-prime/#build">Build</a>
+</div>
 </div></nav>
-
 <main>
-  <section class="hero">
-    <div>
-      <div class="kicker">Toolbox / local-first</div>
-      <h1>Tools for inspectable pipelines.</h1>
-      <p class="lead">The OKC toolbox collects small reversible utilities around compact representation, corpus inspection, tokenizer pressure, binary/text roundtrips and benchmark economics.</p>
-      <div class="cta"><a class="btn primary" href="#modules">View modules ↓</a><a class="btn" href="../contact.html">Discuss a benchmark ↗</a></div>
-    </div>
-    <div class="hero-card"><div class="terminal">
-      <div><span class="prompt">$</span> okc inspect corpus.txt</div>
-      <div>bytes, chars, ids, rare ids, structure</div>
-      <div class="line-gap"></div>
-      <div><span class="prompt">$</span> okc pack stream.u32</div>
-      <div>bit-level transform + roundtrip receipt</div>
-      <div class="line-gap"></div>
-      <div><span class="prompt">$</span> okc compare baseline</div>
-      <div class="good">ratio · speed · memory · restore</div>
-    </div></div>
-  </section>
 
-  <section id="modules" class="section">
-    <div class="section-heading"><div><div class="kicker">Modules</div><h2>Small surfaces. Serious questions.</h2></div><p>Each tool exists to make a representation or claim easier to inspect, reproduce and price.</p></div>
-    <div class="grid stack-grid">
-      <article id="idstream" class="card stack-card"><span class="tag">format bridge</span><h3>IDStream</h3><p>Stable conversion between token IDs, packed integer streams, arrays and deterministic receipts.</p></article>
-      <article id="rengrams" class="card stack-card"><span class="tag">structure scan</span><h3>Rengrams</h3><p>Repeated symbolic-structure scanning with deterministic outputs other modules can consume.</p></article>
-      <article id="sentinel" class="card stack-card"><span class="tag">restore bridge</span><h3>Sentinel Lite</h3><p>Macro stream replacement and restoration: input IDs → macros → restored IDs → verification.</p></article>
-      <article id="redumb" class="card stack-card"><span class="tag">transform</span><h3>Redumb / DUMB</h3><p>Reversible baseline transforms for exact reconstruction, bitpacking and reproducibility checks.</p></article>
-      <article class="card stack-card"><span class="tag">diagnostics</span><h3>Vocabulary pressure</h3><p>Detect singleton/rare IDs, inspect active vocabulary pressure and produce readable report tables.</p></article>
-      <article class="card stack-card"><span class="tag">prediction</span><h3>TCN notes</h3><p>Small neural-prediction experiments over cleaner reversible streams, with claims kept deliberately narrow.</p></article>
-    </div>
-  </section>
+<section class="hero">
+<div>
+<div class="kicker">Lab / composable systems</div>
+<h1>Pipes,<br><span class="codepath">not soup.</span></h1>
+<p class="lead">Small tools for reversible structure, model experiments, format bridges and benchmark economics. Each module owns a narrow contract; the launcher can compose them without turning the stack into one inseparable binary.</p>
+<div class="cta"><a class="btn primary" href="#modules">Explore modules ↓</a><a class="btn" href="../contact.html">Build a custom pipe ↗</a></div>
+<div class="prime-badges"><span>LOCAL-FIRST</span><span>EXACTNESS</span><span>PLUGGABLE</span></div>
+</div>
+<div class="hero-card"><div class="terminal">
+<div><span class="prompt">$</span> okc inspect workload</div>
+<div>bytes · wall · memory · inverse</div>
+<div class="line-gap"></div>
+<div><span class="prompt">$</span> okc encode --pipe ...</div>
+<div>structure → model → entropy</div>
+<div class="line-gap"></div>
+<div class="good">typed stages · explicit sidebands</div>
+</div></div>
+</section>
 
-  <section class="section split">
-    <div><div class="kicker">Benchmark lab</div><h2>Measure the economic outcome.</h2><p>Compression is not just a smaller file. Track bytes transferred, decode throughput, peak memory, metadata, random access, quality risk and the hardware cost a customer might avoid.</p><a class="btn primary" href="../contact.html">Request a measured pilot ↗</a></div>
-    <div class="terminal"><div><span class="prompt">$</span> okc report workload</div><div>baseline → transform → codec</div><div>ratio: recorded</div><div>decode: recorded</div><div>memory: recorded</div><div>restore: required</div><div class="warn">No receipt, no claim.</div></div>
-  </section>
+<section id="modules" class="section">
+<div class="section-heading"><div><div class="kicker">Module shelf</div><h2>Each piece has one job.</h2></div><p>Some are release lines, some are research tools, some are still experiments. The boundary is part of the page.</p></div>
+<div class="grid">
+<article class="card"><span class="tag">structure</span><h3>DUMBer / DU3</h3><p>Reversible structural representation and exact restore.</p><a href="/v1g-prime/">V1G measurements →</a></article>
+<article class="card"><span class="tag">filter</span><h3>Rare1</h3><p>Optional long-tail transform with explicit rare sideband.</p><a href="rare1.html">Rare1 module →</a></article>
+<article class="card"><span class="tag">model</span><h3>zRank</h3><p>Experimental rank-model transform with independent model state and inverse.</p><a href="../products/zrank.html">zRank research →</a></article>
+<article class="card"><span class="tag">format bridge</span><h3>IDStream</h3><p>Canonical and packed integer-stream conversions for reproducible plumbing.</p></article>
+<article class="card"><span class="tag">structure scan</span><h3>Rengrams</h3><p>Repeated symbolic-structure scans whose outputs other modules can consume.</p></article>
+<article class="card"><span class="tag">model hooks</span><h3>TCN / NLP / domain</h3><p>Future model plugs belong behind an explicit interface rather than inside the structural codec.</p></article>
+</div>
+</section>
 
-  <section class="section">
-    <div class="section-heading"><div><div class="kicker">Commercial boundary</div><h2>Free surface, paid work.</h2></div></div>
-    <div class="license-card"><strong>Independent human use is free under project terms.</strong> Corporate evaluation, private runtimes, SaaS, internal automation, resale, integration or custom research requires a defined agreement where marked. Packaged artifacts may follow when stable; there is no paywall around the public proof trail.</div>
-  </section>
+<section class="section split">
+<div><div class="kicker">Benchmark contract</div><h2>Fastest. Smallest. Network. Structure.</h2>
+<p>No synthetic overall score. Compare bytes, encode, decode, memory, transfer and exactness on visible axes. Different workloads can have different winners.</p>
+<a class="btn primary" href="/v1g-prime/#pareto">Open decision surface ↗</a></div>
+<div class="prime-module-flow"><b>INPUT</b><br>↓<br><b>STRUCTURE</b> → [FILTER] → [MODEL] → [ENTROPY]<br>↓<br><b>OUTPUT / CONTAINER</b></div>
+</section>
+
+<section class="section split">
+<div><div class="kicker">Roadmap</div><h2>Bound the hard parts.</h2><p>Large-corpus reconciliation is a current memory target. The public roadmap is simple: preserve determinism and exactness while moving global coordination toward bounded execution.</p></div>
+<div class="card"><span class="tag">Next systems work</span><h3>Bounded reconciliation</h3><p>Measure memory, keep ordering contracts stable, and avoid exposing implementation detail before the design settles.</p></div>
+</section>
+
 </main>
-
-<footer class="footer"><p class="small">© <span data-year></span> OKC Labs / OKCompressor. Source-available research tooling. Free for humans, commercial use by agreement.</p><div class="footer-links"><a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/sponsors/OKCompressor" target="_blank" rel="noreferrer">Sponsors</a><a href="mailto:blue@okcompressor.com">blue@okcompressor.com</a></div></footer>
+<footer class="footer">
+<p>Built in Galicia · local-first systems research.</p>
+<div class="footer-links">
+<a href="../v1g-prime/">OKC</a>
+<a href="../licensing.html">Licensing</a>
+<a href="../contact.html">Contact</a>
+<a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a>
+</div>
+</footer>
 <script src="../assets/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080a0d">
+  <meta name="description" content="DUMBer V1G / DU3 — reversible structural compression, exact reconstruction and measured scaling from 100 KB to 100 GB.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DUMBer V1G / DU3 — Structure first. Entropy later.">
+  <meta property="og:description" content="A reversible structural codec with exact reconstruction and measured scaling to 100 GB.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DUMBer V1G / DU3">
+  <meta name="twitter:description" content="Structure first. Entropy later. Exact, measured, reversible.">
+  <title>OKC — DUMBer V1G / DU3</title>
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="nav shell">
+    <a class="brand" href="#">OKC<span>/LAB</span></a>
+    <nav>
+      <a href="#scale">Benchmarks</a>
+      <a href="#playground">Lab</a>
+      <a href="#research">Research</a>
+      <a href="#build">Build</a>
+    </nav>
+    <div class="lang">EN <span>· PT · GL</span></div>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="eyebrow"><i></i> DUMBer V1G · DU3 structural codec</div>
+
+      <h1>
+        Structure first.<br>
+        <em>Entropy later.</em>
+      </h1>
+
+      <p class="lede">
+        A reversible structural representation built around bounded local IDs,
+        deterministic global reconciliation and exact reconstruction.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button primary" href="#scale">See measurements</a>
+        <a class="button" href="#lab">Enter the lab</a>
+      </div>
+
+      <div class="hero-grid">
+        <article>
+          <small>1 GB restore</small>
+          <strong>1.18<span>s</span></strong>
+          <p>Hutter enwik9</p>
+        </article>
+        <article>
+          <small>10 GB restore</small>
+          <strong>12.11<span>s</span></strong>
+          <p>best isolated run</p>
+        </article>
+        <article>
+          <small>100 GB restore</small>
+          <strong>135.42<span>s</span></strong>
+          <p>best isolated run</p>
+        </article>
+      </div>
+
+      <p class="receipt-line">
+        Exact receipts · SHA-verified reconstruction · measured on PC2 NVMe
+      </p>
+    </section>
+
+    <section id="scale" class="section shell">
+      <div class="section-head">
+        <div>
+          <span class="kicker">01 / SCALE</span>
+          <h2>Measured from kilobytes to 100 GB.</h2>
+        </div>
+        <p>
+          Full structural encode includes DU encode, dictionary merge and gmap.
+          Small-system microbenchmarks are separated from large-corpus receipts.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Input</th>
+              <th>Corpus</th>
+              <th>Structural encode</th>
+              <th>Structural restore</th>
+              <th>Exact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>100 KB</td><td>Hutter enwik5</td><td>8.893 ms</td><td>2.277 ms</td><td class="pass">PASS</td></tr>
+            <tr><td>1 MB</td><td>Hutter enwik6</td><td>44.567 ms</td><td>9.563 ms</td><td class="pass">PASS</td></tr>
+            <tr><td>10 MB</td><td>Hutter enwik7</td><td>320 ms</td><td>40 ms</td><td class="pass">PASS</td></tr>
+            <tr><td>100 MB</td><td>Hutter enwik8</td><td>1.45 s</td><td>180 ms</td><td class="pass">PASS</td></tr>
+            <tr><td>1 GB</td><td>Hutter enwik9</td><td>10.67 s</td><td>1.18 s</td><td class="pass">PASS</td></tr>
+            <tr class="focus"><td>10 GB</td><td>OKC extended</td><td>137.29 s</td><td>12.84 s</td><td class="pass">PASS</td></tr>
+            <tr class="focus"><td>100 GB</td><td>OKC extended</td><td>26m 03.86s</td><td>3m 38.47s</td><td class="pass">PASS</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">
+        10 GB is SHA-verified as the first 10,000,000,000 bytes of the measured
+        100 GB extended corpus. 100 KB / 1 MB microbench values are medians from
+        50 CLI invocations collected under concurrent system load.
+      </p>
+    </section>
+
+
+    <section id="pareto" class="section shell">
+      <span class="kicker">02 / DECISION SURFACE</span>
+      <h2>Pick the constraint.<br>Keep the receipts.</h2>
+
+      <div class="decision-tabs" role="tablist" aria-label="Benchmark view">
+        <button data-mode="fastest">FASTEST</button>
+        <button data-mode="smallest">SMALLEST</button>
+        <button data-mode="network" class="active">NETWORK</button>
+        <button data-mode="structure">STRUCTURE</button>
+      </div>
+
+      <div class="scale-tabs">
+        <span>WORKLOAD</span>
+        <button data-bench-scale="100MB">100 MB</button>
+        <button data-bench-scale="1GB" class="active">1 GB</button>
+        <button data-bench-scale="10GB">10 GB</button>
+        <button data-bench-scale="100GB">100 GB</button>
+      </div>
+
+      <div class="decision-grid">
+        <article class="panel decision-main">
+          <div class="decision-head">
+            <span id="decision-scope">Hutter enwik9 · 1 GB</span>
+            <span id="decision-boundary">ENCODE + TRANSFER</span>
+          </div>
+
+          <h3 id="decision-title">Network-aware</h3>
+          <p id="decision-copy" class="decision-copy"></p>
+
+          <div class="metric-pair">
+            <div>
+              <small id="raw-label">raw zstd19</small>
+              <strong id="raw-primary">—</strong>
+              <span id="raw-secondary">—</span>
+            </div>
+
+            <div>
+              <small id="du-label">DU3 + zstd19</small>
+              <strong id="du-primary">—</strong>
+              <span id="du-secondary">—</span>
+            </div>
+          </div>
+
+          <div class="tradeoff-strip" aria-label="Visible tradeoff">
+            <span>BYTES <strong id="decision-delta-bytes">—</strong></span>
+            <span>WALL <strong id="decision-delta-wall">—</strong></span>
+            <span>NO SYNTHETIC SCORE</span>
+          </div>
+
+          <div id="network-controls" class="network">
+            <div class="network-title">
+              <span>Your effective link</span>
+              <strong id="rate-label">10 Mbps</strong>
+            </div>
+
+            <input
+              id="rate"
+              type="range"
+              min="-1.252"
+              max="3"
+              step=".01"
+              value="1"
+              aria-label="Effective network speed"
+            >
+
+            <div class="quick-rates">
+              <button data-rate=".056">56k</button>
+              <button data-rate="1">1M</button>
+              <button data-rate="3">3M</button>
+              <button data-rate="5">5M</button>
+              <button data-rate="10">10M</button>
+              <button data-rate="100">100M</button>
+              <button data-rate="1000">1G</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel decision-side">
+          <small>RESULT</small>
+          <strong id="decision-callout">—</strong>
+          <p id="decision-note"></p>
+
+          <div class="scope-tags">
+            <span>MEASURED</span>
+            <span>EXACT DU3</span>
+            <span>ZSTD REFERENCE</span>
+          </div>
+        </article>
+      </div>
+
+      <p class="note">
+        Current transport comparisons use zstd as a widely available reference
+        entropy backend. Entropy coding is pluggable and is not part of DU3.
+        Views expose different optimization dimensions rather than a single
+        synthetic score.
+      </p>
+    </section>
+
+
+    <section id="playground" class="section shell">
+      <span class="kicker">03 / PLAYGROUND</span>
+      <h2>Open a file.<br>See what the machine sees.</h2>
+
+      <div class="loader-grid">
+        <div class="dropzone" id="dropzone">
+          <input id="file-input" type="file"
+                 accept=".pdf,.md,.txt,.html,.json,.csv,application/pdf,text/*">
+          <div class="drop-copy">
+            <small>LOCAL ONLY</small>
+            <strong>Drop a PDF, Markdown or text file.</strong>
+            <p>
+              Nothing is uploaded. The browser reads the bytes locally.
+              Today: byte inspector. Next: DU3 V1G structural roundtrip in WASM.
+            </p>
+            <button id="pick-file" class="button primary" type="button">
+              Choose file
+            </button>
+          </div>
+        </div>
+
+        <div class="inspect">
+          <div class="inspect-head">
+            <span id="inspect-name">waiting for input</span>
+            <span id="inspect-state">IDLE</span>
+          </div>
+
+          <div class="inspect-stats">
+            <div><small>bytes</small><strong id="inspect-bytes">—</strong></div>
+            <div><small>read</small><strong id="inspect-read">—</strong></div>
+            <div><small>sha-256</small><strong id="inspect-hash-time">—</strong></div>
+          </div>
+
+          <div class="hash">
+            <small>SHA-256</small>
+            <code id="inspect-hash">—</code>
+          </div>
+
+          <div class="hex-head">
+            <small>HEX / first 256 bytes</small>
+            <span>visual loader v0</span>
+          </div>
+          <pre id="hex-view">00  ::  feed me bytes</pre>
+        </div>
+      </div>
+
+      <div class="wasm-contract">
+        <div>
+          <small>NEXT / DU3 V1G WASM</small>
+          <strong>file → structure → restore → SHA-256 PASS</strong>
+        </div>
+        <p>
+          Structural transform only. No zstd, Rare1 or zRank in the browser demo.
+          The point is to expose what downstream stages receive, measure retained
+          representation bytes, and prove exact local recovery.
+        </p>
+      </div>
+
+      <p class="note">
+        The browser demo will use the already-public DU lineage as the exposure
+        boundary, while current bounded reconciliation and experimental model
+        work remain outside the client bundle.
+      </p>
+    </section>
+
+    <section id="lab" class="section shell">
+      <span class="kicker">04 / LAB</span>
+      <h2>Small sharp things.</h2>
+
+      <div class="cards">
+        <article class="card hot">
+          <span>NEXT</span>
+          <h3>DU3 / WASM</h3>
+          <p>
+            Run the structural transform locally, inspect what downstream
+            coders receive, then restore the original bytes and verify SHA-256.
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/OKCompressor/redumb" target="_blank" rel="noreferrer">Rust lineage ↗</a>
+            <a href="https://github.com/OKCompressor/dumb_pre" target="_blank" rel="noreferrer">Python reference ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <span>MODULE</span>
+          <h3>Rare1</h3>
+          <p>
+            Optional long-tail transform under active research.
+            Kept as an explicit pipe, separate from the DU3 baseline.
+          </p>
+          <a href="../projects/rare1.html">Open module →</a>
+        </article>
+
+        <article class="card">
+          <span>MODULE</span>
+          <h3>zRank</h3>
+          <p>
+            Experimental model transform behind an explicit pipe boundary.
+            Independent from DU3 and from the entropy backend.
+          </p>
+          <a href="../products/zrank.html">Open module →</a>
+        </article>
+
+        <article class="card">
+          <span>ROADMAP</span>
+          <h3>Bounded reconciliation</h3>
+          <p>
+            The next memory target: merge and gmap32 reached roughly
+            13.2 GiB and 16.8 GiB RSS at 100 GB.
+          </p>
+        </article>
+      </div>
+    </section>
+
+
+    <section id="research" class="section shell">
+      <div class="section-head">
+        <div>
+          <span class="kicker">05 / RESEARCH</span>
+          <h2>The strange shelf stays open.</h2>
+        </div>
+        <p>
+          Receipts, working notes, experimental codecs and older mechanisms
+          stay searchable. DU3 is the active structural baseline; Rare1 and
+          zRank remain optional research modules, not hidden dependencies.
+        </p>
+      </div>
+
+      <div class="cards research-cards">
+        <article class="card">
+          <span>EXPERIMENT</span>
+          <h3>DOE</h3>
+          <p>Older experimental work preserved as part of the research trail.</p>
+          <a href="../products/doe.html">Explore →</a>
+        </article>
+
+        <article class="card">
+          <span>EXPERIMENT</span>
+          <h3>Pongo</h3>
+          <p>Research artifact from the wider OKC codec laboratory.</p>
+          <a href="../products/pongo.html">Explore →</a>
+        </article>
+
+        <article class="card">
+          <span>EXPERIMENT</span>
+          <h3>ZXSynth</h3>
+          <p>Synthetic and structural experiments from the archive.</p>
+          <a href="../products/zxsynth.html">Explore →</a>
+        </article>
+
+        <article class="card">
+          <span>EXPERIMENT</span>
+          <h3>OCK Rotor</h3>
+          <p>Earlier codec machinery, preserved for reference and reuse.</p>
+          <a href="../products/ock-rotor.html">Explore →</a>
+        </article>
+      </div>
+
+      <div class="research-links">
+        <a href="../research/working-note-001.html">Working notes →</a>
+        <a href="../research/doe-001.html">Research papers →</a>
+        <a href="../projects/tools.html">Tools →</a>
+      </div>
+    </section>
+
+    <section id="build" class="section shell build">
+      <div>
+        <span class="kicker">06 / BUILD</span>
+        <h2>Your data has structure.<br>Use it.</h2>
+      </div>
+
+      <div>
+        <p>
+          Need a custom structural codec, model-facing transform,
+          data-plane experiment or integration? Built in Galicia; designed
+          for local compute, storage and edge workloads.
+        </p>
+        <div class="cta">
+          <a class="button primary" href="../contact.html">Build a custom coder</a>
+          <a class="button" href="../licensing.html">Licensing</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <strong>OKC</strong>
+    <span>Experimental structural codecs · receipts before narrative.</span>
+    <span>EN first · PT / GL queued</span>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
