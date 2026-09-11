@@ -1,6 +1,6 @@
-# 🌗 Luna Non-Commons License v1.1
+# 🌗 Luna Non-Commons License v1.2
 
-**SPDX-License-Identifier:** `LicenseRef-Luna-Non-Commons-1.1`
+**SPDX-License-Identifier:** `LicenseRef-Luna-Non-Commons-1.2`
 
 Copyright © 2025–2026 OKCompressor contributors and applicable copyright holders.
 
@@ -25,7 +25,7 @@ These principles guide interpretation of this License where a provision is ambig
 | **L3** | **Maintainers remain free** | Publishing the Software creates no duty to continue development, support, hosting, compatibility, or availability. |
 | **L4** | **Dependency does not create servitude** | A party that relies critically on the Software is responsible for its own continuity, mirrors, backups, forks, staffing, and recovery. |
 | **L5** | **Extraction implies reciprocity** | Commercial organizations that derive operational or economic value from the Software require a separate commercial or reciprocity agreement. |
-| **L6** | **Knowledge remains inspectable** | Redistributed Covered Works must preserve source availability, license terms, attribution, and modification notices. |
+| **L6** | **Release mode stays explicit** | Redistributed Covered Works must preserve license terms, attribution, provenance, and modification notices. Source availability is determined by the Release Mode of the distributed Covered Work. |
 | **L7** | **Automation inherits its operator** | Use through an AI model, agent, contractor, subsidiary, service, or technical intermediary is treated as use by the party directing or materially benefiting from that use. |
 | **L8** | **No enclosure by redistribution** | A permitted redistribution may not remove downstream rights granted here to lawful Human Users. |
 | **L9** | **Patent aggression terminates rights** | Patent claims used to restrict the Software or Covered Works terminate the claimant's rights under this License. |
@@ -37,7 +37,7 @@ These principles guide interpretation of this License where a provision is ambig
 
 ### 1.1 Software
 
-**Software** means the source code, documentation, configuration, examples, data definitions, build material, and other copyrightable material distributed with this License.
+**Software** means source code, executable or object code, documentation, configuration, examples, data definitions, build material, and other copyrightable material distributed by an applicable copyright holder under this License. A particular release need not contain every category of material.
 
 ### 1.2 Covered Work
 
@@ -78,7 +78,19 @@ Evaluation solely to decide whether to obtain a commercial license is permitted.
 
 ### 1.7 Distribution
 
-**Distribution** means providing a copy of a Covered Work to another party in source or executable form, other than temporary internal transfer solely within the rights already granted to that party.
+**Distribution** means providing a copy of a Covered Work to another party in source, executable, object, package, archive, or other copyrightable form, other than temporary internal transfer solely within the rights already granted to that party.
+
+### 1.8 Release Mode
+
+A **Release Mode** states whether corresponding source code is supplied for a particular Distribution.
+
+A **Source-Available Release** includes the corresponding source code, or identifies a durable location from which recipients may obtain that source.
+
+A **Binary-Only Release** distributes executable, object, package, archive, or other non-source material without an obligation under this License to publish, disclose, escrow, or provide corresponding source code.
+
+Where reasonably practical, the applicable Release Mode should be stated with the Distribution.
+
+Binary-Only Release mode does not waive rights independently granted to a recipient by applicable law.
 
 ---
 
@@ -121,21 +133,33 @@ Downloading the Software, employing a Human User, using a contractor, operating 
 
 ---
 
-## 4. Share-Alike Distribution
+## 4. Distribution and Release Modes
 
 A Human User who distributes a Covered Work must:
 
 1. distribute the Covered Work under this same License;
 2. include the complete text of this License;
 3. preserve all applicable copyright, authorship, and attribution notices;
-4. make the corresponding source code of the distributed Covered Work available to its recipients;
-5. clearly identify material modifications;
-6. preserve available provenance information where reasonably practical;
+4. clearly identify material modifications;
+5. preserve available provenance information where reasonably practical;
+6. identify the Distribution as Source-Available or Binary-Only where reasonably practical;
 7. avoid representing a fork or derivative as an official version unless authorized.
 
 A distributor may not impose additional contractual or technical restrictions that prevent a recipient from exercising rights that this License grants to that recipient.
 
 Independent works are not automatically Covered Works merely because they communicate with the Software through ordinary interfaces.
+
+### 4.1 Source-Available Release
+
+A distributor choosing Source-Available Release mode must provide corresponding source with the Distribution or identify a durable location from which recipients may obtain it.
+
+### 4.2 Binary-Only Release
+
+A distributor may distribute a Covered Work in Binary-Only Release mode without providing corresponding source code.
+
+This License by itself creates no obligation to publish, disclose, escrow, mirror, or provide source code for a Binary-Only Release.
+
+Binary-Only Release mode does not alter the commercial restrictions, attribution requirements, provenance requirements, modification notices, or other obligations of this License.
 
 ---
 
@@ -162,8 +186,9 @@ Any fork or Covered Work that is distributed to another party must:
 3. retain applicable copyright and attribution notices;
 4. identify material modifications;
 5. preserve provenance information where reasonably practical;
-6. make corresponding source code available to recipients;
-7. avoid falsely implying official status, endorsement, or continuity with the original project.
+6. identify the distributed fork as Source-Available or Binary-Only where reasonably practical;
+7. if distributed as Source-Available, make corresponding source code available to recipients;
+8. avoid falsely implying official status, endorsement, or continuity with the original project.
 
 **The right to fork does not include the right to erase provenance.**
 
@@ -302,7 +327,7 @@ If a provision of this License is held unenforceable in a particular jurisdictio
 
 ## 17. No OSI Claim
 
-This is a custom source-available license.
+This is a custom human-use and commercial-reciprocity license. A particular Distribution may be Source-Available or Binary-Only.
 
 It is not represented as approved by the Open Source Initiative or as satisfying any third-party definition of "open source."
 
