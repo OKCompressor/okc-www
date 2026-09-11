@@ -1,44 +1,58 @@
 # OKCompressor / OKC
 
-OKC builds reversible information systems: structural codecs,
-model-facing transforms, experimental coders and reproducible research artifacts.
+OKC builds reversible structural systems, model-facing transforms, interoperability layers and reproducible research artifacts.
 
-## Current architecture
+## Current public surfaces
 
-- DU3 — active reversible structural baseline.
-- Rare1 — optional long-tail transform under active Rust validation.
-- zRank — experimental reversible model transform.
-- Entropy — pluggable; current published measurements use zstd as a reference backend.
+- / — DUMBer V1G / DU3 structural baseline and benchmark surface
+- /lab/nereids/ — Nereids exact structural interoperability / Phase 3 1GB receipt
+- /projects/rare1.html — Rare1 optional long-tail transform
+- /products/zrank.html — zRank optional model transform
+- /licensing.html — LNCL 1.2 licensing boundary
+- /contact.html — inquiry / integration routes
 
-## Important pages
+## Nereids
 
-- / — current OKC / DUMBer V1G surface
-- /projects/tools.html — module and tools shelf
-- /projects/rare1.html — Rare1 research module
-- /products/zrank.html — zRank research module
-- /research/working-note-001.html — representation working note
-- /research/doe-001.html — reproducibility working note
-- /licensing.html — licensing boundary
-- /contact.html — builds, integration and research
+Nereids separates canonical byte identity from tokenizer segmentation.
 
-## Benchmark discipline
+Current demonstrated Phase 3 path:
 
-OKC reports separate dimensions:
-FASTEST, SMALLEST, NETWORK and STRUCTURE.
+bytes
+→ DU3 structural representation
+→ canonical DU lexeme bytes
+→ precomputed DU GID to target-ID mapping
+→ cl100k_base mergeable IDs
+→ exact original bytes
 
-Intermediate representations are not described as complete archives.
-Exactness boundaries and dataset provenance are stated explicitly.
+1GB enwik9 Phase 3:
+- 1,000,000,000 input bytes
+- 0 unmappable DU entries
+- exact raw / DU / target reconstruction
+- source: https://github.com/OKCompressor/nereids
+- receipt: https://github.com/OKCompressor/nereids/blob/main/docs/benchmarks/enwik9-phase3-20260911.md
+
+Nereids does not currently claim canonical cl100k BPE segmentation equality, universal tokenizer equivalence, KV portability or learned-state exactness.
+
+## DU3
+
+Public module alpha release:
+https://github.com/OKCompressor/core/releases/tag/modules-alpha-20260911
+
+DU3 structural reduction and final entropy-coded compression are separate measurement boundaries.
 
 ## Licensing
 
-Canonical licence:
+Canonical LNCL 1.2:
 https://github.com/OKCompressor/core/blob/main/docs/LICENSE.md
 
-Current licensing line: LNCL 1.2.
-Artifact-specific terms and release files control.
+A release may be Source-Available or Binary-Only according to its declared release mode.
 
-## Boundaries
+Nereids is currently Source-Available under LNCL 1.2.
 
-Experimental software.
-No hidden dependency between DU3, Rare1, zRank or entropy backends.
-Ganymede remains historical R&D evidence, not the production architecture.
+LNCL is not represented as OSI open source.
+
+## Public discipline
+
+Receipts before claims.
+Exact boundaries must remain explicit.
+Structural reduction, model representation size, entropy-coded size, wall time and RSS are separate dimensions.

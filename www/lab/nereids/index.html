@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0d">
+<meta name="description" content="Nereids — byte-exact structural interoperability between DU3 representations and tokenizer/model vocabulary views. 1 GB Phase 3 receipt.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nereids — Exact structural interoperability | OKC">
+<meta property="og:description" content="One billion bytes projected from DU3 into the full cl100k_base mergeable vocabulary with exact reconstruction.">
+<title>Nereids — Exact structural interoperability | OKC</title>
+<link rel="canonical" href="https://okcompressor.com/lab/nereids/">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/prime-subpages.css">
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-inner">
+<a class="brand" href="/"><span class="logo">OKC</span><span>/LAB</span></a>
+<div class="links">
+<a href="/#scale">Benchmarks</a>
+<a href="/#lab">Lab</a>
+<a href="/#research">Research</a>
+<a href="/#build">Build</a>
+</div>
+</div>
+</nav>
+
+<main>
+
+<section class="hero">
+<div>
+<div class="kicker">NEREIDS / PHASE 3 / RECEIPT-BACKED</div>
+
+<h1>Nereids<br><span class="codepath">exact structural interoperability.</span></h1>
+
+<p class="lead">
+One billion bytes. One fixed target vocabulary. Exact reconstruction.
+Nereids projects an existing DU3 structural stream into IDs from the full
+<code>cl100k_base</code> mergeable vocabulary while preserving the original
+byte stream exactly.
+</p>
+
+<div class="cta">
+<a class="btn primary"
+   href="https://github.com/OKCompressor/nereids/blob/main/docs/benchmarks/enwik9-phase3-20260911.md"
+   target="_blank" rel="noreferrer">Inspect the 1 GB receipt ↗</a>
+
+<a class="btn"
+   href="https://github.com/OKCompressor/nereids"
+   target="_blank" rel="noreferrer">Read the source ↗</a>
+</div>
+
+<div class="prime-badges">
+<span>1 GB EXACT</span>
+<span>0 UNMAPPABLE</span>
+<span>CL100K VIEW</span>
+<span>LNCL 1.2 SOURCE-AVAILABLE</span>
+</div>
+</div>
+
+<div class="hero-card">
+<div class="terminal">
+<div>raw bytes</div>
+<div>    ↓</div>
+<div><span class="prompt">DU3 structural representation</span></div>
+<div>    ↓</div>
+<div>canonical DU lexeme bytes</div>
+<div>    ↓</div>
+<div>precomputed DU GID → target ID[]</div>
+<div>    ↓</div>
+<div>cl100k_base mergeable IDs</div>
+<div>    ↓</div>
+<div class="good">exact original bytes</div>
+<div class="line-gap"></div>
+<div>raw SHA == DU SHA == target SHA</div>
+<div class="good">EXACT</div>
+</div>
+</div>
+</section>
+
+
+<section class="section">
+<div class="section-heading">
+<div>
+<div class="kicker">1 GB RESULT</div>
+<h2>A tokenizer view without surrendering byte identity.</h2>
+</div>
+<p>
+The tested target space is the complete <code>cl100k_base</code> mergeable
+vocabulary from tiktoken 0.14.0. Nereids does not claim that its segmentation
+equals canonical cl100k BPE segmentation.
+</p>
+</div>
+
+<table>
+<thead>
+<tr><th>Measurement</th><th>Phase 3 receipt</th></tr>
+</thead>
+<tbody>
+<tr><td>Dataset</td><td>enwik9</td></tr>
+<tr><td>Input</td><td>1,000,000,000 bytes</td></tr>
+<tr><td>DU vocabulary entries</td><td>2,229,308</td></tr>
+<tr><td>Target vocabulary</td><td>cl100k_base / tiktoken 0.14.0</td></tr>
+<tr><td>Target vocabulary entries</td><td>100,256</td></tr>
+<tr><td>DU positions consumed</td><td>402,990,603</td></tr>
+<tr><td>Target IDs emitted</td><td>461,761,619</td></tr>
+<tr><td>Unmappable DU entries</td><td class="good">0</td></tr>
+<tr><td>Target-decoded bytes</td><td>1,000,000,000</td></tr>
+<tr><td>Exact reconstruction</td><td class="good">PASS</td></tr>
+</tbody>
+</table>
+
+<p class="note">
+Input SHA-256:
+159b85351e5f76e60cbe32e04c677847a9ecba3adc79addab6f4c6c7aa3744bc
+</p>
+</section>
+
+
+<section class="section split">
+<div>
+<div class="kicker">PHASE 3 RUNTIME</div>
+<h2>Precompute once.<br>Stream the view.</h2>
+
+<p>
+The DU dictionary → target-vocabulary map is built once for a given DU
+dictionary and target vocabulary pair. The warm path performs ID lookup and
+expansion over the existing DU structural stream.
+</p>
+</div>
+
+<div class="prime-module-flow">
+<b>map build</b>     12.653240804 s<br>
+<b>warm remap</b>    17.628295101 s<br>
+<b>throughput</b>     56,726,983 B/s<br>
+<b>logical chunks</b> 10 × ~100 MB<br>
+<b>peak RSS</b>       234,464 KiB<br>
+<b>whole process</b>   31.85 s
+</div>
+</section>
+
+
+<section class="section">
+<div class="section-heading">
+<div>
+<div class="kicker">COMPARISON BOUNDARY</div>
+<h2>Same corpus.<br>Different starting point.</h2>
+</div>
+<p>
+The recorded canonical tokenizer baseline starts from text. Nereids warm remap
+starts from an existing DU structural stream. These numbers are shown as
+separate receipts, not as a direct tokenizer speedup claim.
+</p>
+</div>
+
+<div class="grid two">
+<article class="card">
+<span class="tag">canonical tokenizer baseline</span>
+<h3>cl100k_base</h3>
+<p>
+273,662,103 canonical BPE tokens.<br>
+Encode wall: 76.098723388 s.<br>
+Decode + hash: 12.579615231 s.<br>
+Whole-process RSS: 6,015,284 KiB.<br>
+Exact reconstruction: PASS.
+</p>
+</article>
+
+<article class="card">
+<span class="tag">Nereids warm structural view</span>
+<h3>DU3 → cl100k IDs</h3>
+<p>
+461,761,619 target-vocabulary IDs emitted.<br>
+Warm remap wall: 17.628295101 s.<br>
+Peak RSS: 234,464 KiB.<br>
+Exact reconstruction: PASS.
+</p>
+</article>
+</div>
+
+<p class="note">
+No direct “4.3× faster tokenizer” claim is made. Matched end-to-end methodology
+is a separate future gate.
+</p>
+</section>
+
+
+<section class="section">
+<div class="section-heading">
+<div>
+<div class="kicker">ARTIFACTS</div>
+<h2>Explicit state.<br>Measured size.</h2>
+</div>
+<p>
+The target model is tokenizer-global and corpus-independent. The DU→target map
+depends on the specific DU dictionary and target vocabulary pair.
+</p>
+</div>
+
+<table>
+<thead>
+<tr><th>Artifact</th><th>Bytes</th><th>Input share</th></tr>
+</thead>
+<tbody>
+<tr><td>enwik9 raw input</td><td>1,000,000,000</td><td>100.0000%</td></tr>
+<tr><td>DU3 merged.dict</td><td>20,856,995</td><td>2.0857%</td></tr>
+<tr><td>cl100k model.bin</td><td>1,044,858</td><td>0.1045%</td></tr>
+<tr><td>precomputed map ID payload</td><td>26,518,400</td><td>2.6518%</td></tr>
+<tr><td>current full CSR map</td><td>44,352,872</td><td>4.4353%</td></tr>
+</tbody>
+</table>
+</section>
+
+
+<section class="section">
+<div class="section-heading">
+<div>
+<div class="kicker">EXACTNESS BOUNDARY</div>
+<h2>Exact bytes ≠ canonical segmentation.</h2>
+</div>
+<p>
+Nereids separates information identity from tokenizer segmentation.
+A tokenizer chooses an operational factorization of the byte stream; that
+factorization is not treated as the canonical identity underneath it.
+</p>
+</div>
+
+<div class="grid two">
+<article class="card">
+<span class="tag">PROVEN / EXACT</span>
+<h3>Structural identity</h3>
+<p>
+Byte reconstruction.<br>
+DU lexeme reconstruction.<br>
+DU dictionary → target-vocabulary mapping.<br>
+Valid cl100k mergeable IDs.<br>
+Streamed 1 GB translation.<br>
+Raw / DU / target SHA equality.
+</p>
+</article>
+
+<article class="card">
+<span class="tag">NOT CLAIMED YET</span>
+<h3>Model semantics</h3>
+<p>
+Canonical cl100k BPE segmentation equality.<br>
+Drop-in native tokenizer equivalence.<br>
+KV-cache portability.<br>
+Hidden-state portability.<br>
+Learned projection exactness.<br>
+Rare1, rengrams or zRank integration.
+</p>
+</article>
+</div>
+</section>
+
+
+<section class="section split">
+<div>
+<div class="kicker">ARCHITECTURE</div>
+<h2>Information first.<br>Tokenizer view second.</h2>
+<p>
+DU3 carries structural identity. Nereids restores each DU dictionary lexeme to
+canonical bytes before projection into the target vocabulary.
+</p>
+<p>
+DU3 control representations are valid serialization, not corruption. Nereids
+decodes them back to canonical lexeme bytes before target-vocabulary mapping.
+</p>
+</div>
+
+<div class="prime-module-flow">
+RAW BYTES<br>
+&nbsp;&nbsp;↓<br>
+<b>DU3</b><br>
+&nbsp;&nbsp;↓<br>
+canonical structural identity<br>
+&nbsp;&nbsp;↓<br>
+<b>NEREIDS</b><br>
+&nbsp;&nbsp;↓<br>
+tokenizer / model vocabulary views
+</div>
+</section>
+
+
+<section class="section">
+<div class="section-heading">
+<div>
+<div class="kicker">THESIS</div>
+<h2>BPE is a view over the bytes,<br>not the bytes.</h2>
+</div>
+<p>
+The representation required to preserve information exactly is not identical
+to the segmentation convention selected by a tokenizer.
+</p>
+</div>
+
+<div class="prime-callout">
+<strong>Receipts before claims.</strong>
+<p>
+Exact where exactness is possible. Approximate where learning begins.
+Nereids is source-available under LNCL 1.2 and is not presented as OSI
+open-source software.
+</p>
+</div>
+</section>
+
+
+<section class="section">
+<div class="section-heading">
+<div>
+<div class="kicker">NEXT GATES</div>
+<h2>Compatibility before projection hype.</h2>
+</div>
+<p>
+Each new adapter or structural layer gets its own exact reconstruction receipt
+before it becomes a public compatibility claim.
+</p>
+</div>
+
+<div class="grid">
+<article class="card">
+<span class="tag">NEXT</span>
+<h3>Matched DU3 methodology</h3>
+<p>Fresh DU3-v1g enwik9 measurement and matched end-to-end comparison.</p>
+</article>
+
+<article class="card">
+<span class="tag">ADAPTER</span>
+<h3>Mistral / Qwen</h3>
+<p>Local model-I/O validation with explicit tokenizer-family receipts.</p>
+</article>
+
+<article class="card">
+<span class="tag">LATER</span>
+<h3>Proteus</h3>
+<p>Snapshots, deltas, bounded repair and model-I/O orchestration above the exact structural core.</p>
+</article>
+</div>
+
+<div class="cta">
+<a class="btn primary"
+   href="https://github.com/OKCompressor/nereids/blob/main/docs/benchmarks/enwik9-phase3-20260911.md"
+   target="_blank" rel="noreferrer">Inspect the receipt ↗</a>
+<a class="btn"
+   href="https://github.com/OKCompressor/nereids"
+   target="_blank" rel="noreferrer">GitHub ↗</a>
+<a class="btn"
+   href="https://github.com/OKCompressor/core/releases/tag/modules-alpha-20260911"
+   target="_blank" rel="noreferrer">DU3 release ↗</a>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<p>Built in Galicia · reversible systems for local, edge and federated compute.</p>
+<div class="footer-links">
+<a href="/">OKC</a>
+<a href="/licensing.html">Licensing</a>
+<a href="/contact.html">Contact</a>
+<a href="https://github.com/OKCompressor/nereids" target="_blank" rel="noreferrer">Nereids GitHub</a>
+</div>
+</footer>
+
+</body>
+</html>
