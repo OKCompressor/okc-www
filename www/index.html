@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>OKCompressor — Reversible machines for information</title>
-  <meta name="description" content="OKCompressor builds small reversible coders, strange media experiments, inspectable research tools and runnable proof.">
-<meta property="og:title" content="OKCompressor — Reversible machines for information">
-<meta property="og:description" content="Runnable proof, reversible machines, local-first tools and inspectable research artifacts.">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-
-  <link rel="stylesheet" href="assets/styles.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#080a0d">
+  <meta name="description" content="DUMBer V1G / DU3 — reversible structural compression, exact reconstruction and measured scaling from 100 KB to 100 GB.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DUMBer V1G / DU3 — Structure first. Entropy later.">
+  <meta property="og:description" content="A reversible structural codec with exact reconstruction and measured scaling to 100 GB.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DUMBer V1G / DU3">
+  <meta name="twitter:description" content="Structure first. Entropy later. Exact, measured, reversible.">
+  <title>OKC — DUMBer V1G / DU3</title>
+  <link rel="canonical" href="/">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/prime.css">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -24,288 +28,393 @@
   </script>
 </head>
 <body>
-<nav class="nav"><div class="nav-inner">
-  <a class="brand" href="index.html"><span class="logo">OK</span><span>OKC</span></a>
-  <div class="links"><a href="#drops">Drops</a><a href="#proofs">Proofs</a><a href="#research">Research</a><a href="projects/tools.html">Tools</a><a href="contact.html">Contact</a></div>
-</div></nav>
+  <header class="nav shell">
+    <a class="brand" href="#">OKC<span>/LAB</span></a>
+    <nav>
+      <a href="#scale">Benchmarks</a>
+      <a href="#playground">Lab</a>
+      <a href="#research">Research</a>
+      <a href="#build">Build</a>
+    </nav>
+<div class="language-switch"><a href="/">EN</a> · <a href="/es/">ES</a> · <a href="/gl/">GL</a></div>
+    <div class="lang">EN <span>· PT · GL</span></div>
+  </header>
 
-<main>
+  <main>
+    <section class="hero shell">
+      <div class="eyebrow"><i></i> DUMBer V1G · DU3 structural codec</div>
 
-<div class="lab-banner">
-  <strong>OKC Lab — experimental prereleases.</strong>
-  Working software, public experiments and early builds. Free personal use unless noted.
-  Commercial source access, integration and technical transfer by inquiry.
-  <a href="licensing.html">Licence boundary →</a>
-</div>
+      <h1>
+        Structure first.<br>
+        <em>Entropy later.</em>
+      </h1>
 
-<section class="hero hero-launch">
-  <div>
-    <div class="kicker">Independent reversible-systems lab</div>
-    <h1>Weird tools.<br><span class="codepath">Runnable proof.</span></h1>
-    <p class="lead">Small coders, reversible containers, visual and sonic carrier experiments, and the research stack underneath them. Some work is free. Source releases follow project maturity. Commercial extraction pays for the next experiment.</p>
-    <p class="hero-note"><strong>Your data should come back exactly.</strong> No receipt, no claim. No giant platform required.</p>
-    <div class="cta">
-      <a class="btn primary" href="#drops">Open the artifact shelf ↓</a>
-      <a class="btn" href="#research">Read the research ↓</a>
-      <a class="btn" href="contact.html">Collaborate ↗</a>
-    </div>
-  </div>
-  <div class="hero-card signal-card">
-    <div class="terminal">
-      <div><span class="prompt">$</span> okc drop status</div>
-      <div data-release-terminal="ockrotor">OCK Rotor  → PRERELEASE</div>
-      <div data-release-terminal="zrank">zRank      → QUEUED</div>
-      <div data-release-terminal="doe">doe        → QUEUED</div>
-      <div data-release-terminal="pongo">Pongo      → QUEUED</div>
-      <div data-release-terminal="zxsynth">ZXSynth    → PUBLIC PROTOTYPE / ADVANCED QUEUED</div>
-      <div class="line-gap"></div>
-      <div>free binaries      : human-scale play</div>
-      <div>source releases    : maturity-gated</div>
-      <div>commercial use     : agreement</div>
-      <div>deep research      : talk to us</div>
-    </div>
-  </div>
-</section>
+      <p class="lede">
+        A reversible structural representation built around bounded local IDs,
+        deterministic global reconciliation and exact reconstruction.
+      </p>
 
-<section class="manifesto-strip">
-  <span>OPEN PROOF</span><span>REVERSIBLE FIRST</span><span>LOCAL WHEN POSSIBLE</span>
-  <span>FREE FOR HUMANS</span><span>PAID FOR CORPORATIONS</span>
-</section>
-
-<section id="drops" class="section">
-  <div class="section-heading">
-    <div><div class="kicker">Drop shelf / 05 artifacts</div><h2>Tiny machines with sharp edges.</h2></div>
-    <p>These are deliberately small. Download runnable artifacts when available. Source releases follow project maturity; commercial integration and technical transfer use the inquiry lane.</p>
-  </div>
-
-  <div id="release-shelf" class="artifact-groups">
-    <div class="artifact-group">
-      <div class="artifact-group-head"><span class="kicker">Reversible transform</span><span class="small">state / container / exact restore</span></div>
-      <div class="artifact-rail artifact-rail-one">
-<article class="artifact-card rotor-card" data-product="ockrotor">
-      <div class="artifact-top"><span class="artifact-mark">⚙</span><span class="tag" data-release-status>prerelease</span></div>
-      <h3>OCK Rotor <span class="codepath">OCKR4</span></h3>
-      <p>Arbitrary-byte rotor experiment with exact roundtrip receipts, a tagged OCKR4 container and a living encode/decode Matrix view.</p>
-      <div class="price-line"><span>Linux x86_64</span><strong data-release-binary>v0.4.0 · €0</strong></div>
-      <div class="price-line"><span>Rust source / commercial</span><strong data-release-rust>inquiry</strong></div>
-      <div class="artifact-actions" data-release-actions><a class="btn primary" href="products/ock-rotor.html">Inspect →</a></div>
-      <div class="mirror-row" data-release-mirrors></div>
-    </article>
+      <div class="hero-actions">
+        <a class="button primary" href="#scale">See measurements</a>
+        <a class="button" href="#lab">Enter the lab</a>
       </div>
-    </div>
 
-    <div class="artifact-group">
-      <div class="artifact-group-head"><span class="kicker">Coders / compression</span><span class="small">small reversible machines</span></div>
-      <div class="artifact-rail artifact-rail-two">
-<article class="artifact-card" data-product="zrank">
-      <div class="artifact-top"><span class="artifact-mark">ZR</span><span class="tag" data-release-status>queued</span></div>
-      <h3>zRank <span class="codepath">.zrk</span></h3>
-      <p>Single-file reversible coder. Linux-first Rust ELF is the release target; multi-file wrapper/container stays a separate queued layer.</p>
-      <div class="price-line"><span>binary</span><strong data-release-binary>queued · €0</strong></div>
-      <div class="price-line"><span>Rust source</span><strong data-release-rust>inquiry</strong></div>
-      <div class="artifact-actions" data-release-actions><a class="btn primary" href="products/zrank.html">Inspect →</a></div>
-      <div class="mirror-row" data-release-mirrors></div>
-    </article>
-<article class="artifact-card paper-card" data-product="doe">
-      <div class="artifact-top"><span class="artifact-mark">DOE</span><span class="tag" data-release-status>queued</span></div>
-      <h3>doe <span class="codepath">.doe</span></h3>
-      <p>Single-file reversible coder with a deliberately paper-like construction trail: exact restore, corpus hashes, adverse results and reproducible measurements.</p>
-      <div class="price-line"><span>binary</span><strong data-release-binary>queued · €0</strong></div>
-      <div class="price-line"><span>Rust source</span><strong data-release-rust>inquiry</strong></div>
-      <div class="artifact-actions" data-release-actions><a class="btn primary" href="products/doe.html">Read / run →</a><a class="btn ghost" href="research/doe-001.html">DOE-001 →</a></div>
-      <div class="mirror-row" data-release-mirrors></div>
-    </article>
+      <div class="hero-grid">
+        <article>
+          <small>1 GB restore</small>
+          <strong>1.18<span>s</span></strong>
+          <p>Hutter enwik9</p>
+        </article>
+        <article>
+          <small>10 GB restore</small>
+          <strong>12.11<span>s</span></strong>
+          <p>best isolated run</p>
+        </article>
+        <article>
+          <small>100 GB restore</small>
+          <strong>135.42<span>s</span></strong>
+          <p>best isolated run</p>
+        </article>
       </div>
-    </div>
 
-    <div class="artifact-group">
-      <div class="artifact-group-head"><span class="kicker">Carriers / media</span><span class="small">representation through visual or sonic channels</span></div>
-      <div class="artifact-rail artifact-rail-two">
-<article class="artifact-card pong-card" data-product="pongo">
-      <div class="artifact-top"><span class="artifact-mark">P</span><span class="tag" data-release-status>queued</span></div>
-      <h3>Pongo <span class="codepath">.pong</span></h3>
-      <p>Reversible visual/output research toy. Public runnable proof can stay free while implementation and integration rights remain paid.</p>
-      <div class="price-line"><span>demo</span><strong data-release-binary>queued · €0</strong></div>
-      <div class="price-line"><span>source</span><strong data-release-rust>inquiry</strong></div>
-      <div class="artifact-actions" data-release-actions><a class="btn primary" href="products/pongo.html">Inspect →</a></div>
-      <div class="mirror-row" data-release-mirrors></div>
-    </article>
-<article class="artifact-card synth-card" data-product="zxsynth">
-      <div class="artifact-top"><span class="artifact-mark">ZX</span><span class="tag" data-release-status>public prototype / advanced queued</span></div>
-      <h3>ZXSynth <span class="codepath">.zxs</span></h3>
-      <p>Existing Python prototype can be the public/free branch; an advanced native edition can carry the expensive source and deeper sound/compression research.</p>
-      <div class="price-line"><span>prototype</span><strong data-release-binary>link pending · €0</strong></div>
-      <div class="price-line"><span>advanced source</span><strong data-release-rust>inquiry</strong></div>
-      <div class="artifact-actions" data-release-actions><a class="btn primary" href="products/zxsynth.html">Inspect →</a></div>
-      <div class="mirror-row" data-release-mirrors></div>
-    </article>
+      <p class="receipt-line">
+        Exact receipts · SHA-verified reconstruction · measured on PC2 NVMe
+      </p>
+    </section>
+
+    <section id="scale" class="section shell">
+      <div class="section-head">
+        <div>
+          <span class="kicker">01 / SCALE</span>
+          <h2>Measured from kilobytes to 100 GB.</h2>
+        </div>
+        <p>
+          Full structural encode includes DU encode, dictionary merge and gmap.
+          Small-system microbenchmarks are separated from large-corpus receipts.
+        </p>
       </div>
-    </div>
-  </div>
 
-  <div class="license-card shelf-note">
-    <strong>Freeware does not mean free source.</strong> Public binaries can stay cheap or free while the implementation, modification rights, integration rights and commercial use remain separately licensed.
-  </div>
-</section>
-
-<section class="section" id="core">
-  <div class="section-head">
-    <div>
-      <div class="kicker">PUBLIC CORE</div>
-      <h2>Not a codec collection.</h2>
-    </div>
-    <p class="section-intro">OKC is a public research stack for reversible representation, transform pipelines and machine-facing information systems. The artifacts above are drops from a larger body of work.</p>
-  </div>
-
-  <div class="grid two core-grid">
-    <article class="card core-card">
-      <span class="tag">public core</span>
-      <h3>DUMB / Redumb</h3>
-      <p>Reversible preprocessing and structural transduction: change the representation without giving up exact reconstruction.</p>
-      <div class="artifact-actions">
-        <a class="btn primary" href="projects/tools.html">Tools / code →</a>
-        <a class="btn ghost" href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Input</th>
+              <th>Corpus</th>
+              <th>Structural encode</th>
+              <th>Structural restore</th>
+              <th>Exact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>100 KB</td><td>Hutter enwik5</td><td>8.893 ms</td><td>2.277 ms</td><td class="pass">PASS</td></tr>
+            <tr><td>1 MB</td><td>Hutter enwik6</td><td>44.567 ms</td><td>9.563 ms</td><td class="pass">PASS</td></tr>
+            <tr><td>10 MB</td><td>Hutter enwik7</td><td>320 ms</td><td>40 ms</td><td class="pass">PASS</td></tr>
+            <tr><td>100 MB</td><td>Hutter enwik8</td><td>1.45 s</td><td>180 ms</td><td class="pass">PASS</td></tr>
+            <tr><td>1 GB</td><td>Hutter enwik9</td><td>10.67 s</td><td>1.18 s</td><td class="pass">PASS</td></tr>
+            <tr class="focus"><td>10 GB</td><td>OKC extended</td><td>137.29 s</td><td>12.84 s</td><td class="pass">PASS</td></tr>
+            <tr class="focus"><td>100 GB</td><td>OKC extended</td><td>26m 03.86s</td><td>3m 38.47s</td><td class="pass">PASS</td></tr>
+          </tbody>
+        </table>
       </div>
-    </article>
 
-    <article class="card core-card">
-      <span class="tag">public core</span>
-      <h3>Rare1</h3>
-      <p>Rare-token / singleton sideband representation and related experiments, with reproducibility and exact reconstruction as the hard boundary.</p>
-      <div class="artifact-actions">
-        <a class="btn primary" href="projects/rare1.html">Rare1 →</a>
-        <a class="btn ghost" href="#proofs">Proofs ↓</a>
+      <p class="note">
+        10 GB is SHA-verified as the first 10,000,000,000 bytes of the measured
+        100 GB extended corpus. 100 KB / 1 MB microbench values are medians from
+        50 CLI invocations collected under concurrent system load.
+      </p>
+    </section>
+
+
+    <section id="pareto" class="section shell">
+      <span class="kicker">02 / DECISION SURFACE</span>
+      <h2>Pick the constraint.<br>Keep the receipts.</h2>
+
+      <div class="decision-tabs" role="tablist" aria-label="Benchmark view">
+        <button data-mode="fastest">FASTEST</button>
+        <button data-mode="smallest">SMALLEST</button>
+        <button data-mode="network" class="active">NETWORK</button>
+        <button data-mode="structure">STRUCTURE</button>
       </div>
-    </article>
 
-    <article class="card core-card">
-      <span class="tag">research lane</span>
-      <h3>Rengrams</h3>
-      <p>Structural repetition work: representations that expose reusable structure before later coding stages.</p>
-      <div class="small">Status: research / evolving.</div>
-    </article>
+      <div class="scale-tabs">
+        <span>WORKLOAD</span>
+        <button data-bench-scale="100MB">100 MB</button>
+        <button data-bench-scale="1GB" class="active">1 GB</button>
+        <button data-bench-scale="10GB">10 GB</button>
+        <button data-bench-scale="100GB">100 GB</button>
+      </div>
 
-    <article class="card core-card">
-      <span class="tag">research lane</span>
-      <h3>Sentinel</h3>
-      <p>Higher-order structural and macro representation experiments within the broader OKC pipeline.</p>
-      <div class="small">Status: research / evolving.</div>
-    </article>
-  </div>
+      <div class="decision-grid">
+        <article class="panel decision-main">
+          <div class="decision-head">
+            <span id="decision-scope">Hutter enwik9 · 1 GB</span>
+            <span id="decision-boundary">ENCODE + TRANSFER</span>
+          </div>
 
-  <div class="license-card shelf-note">
-    <strong>Forward vector:</strong> local and constrained machine intelligence is part of the wider research horizon, but unreleased systems stay unnamed until there is a public artifact worth defending.
-  </div>
-</section>
+          <h3 id="decision-title">Network-aware</h3>
+          <p id="decision-copy" class="decision-copy"></p>
 
-<section class="section" id="proofs">
-  <div class="section-head">
-    <div>
-      <div class="kicker">PROOFS / BENCHES</div>
-      <h2>Claims ship with receipts.</h2>
-    </div>
-    <p class="section-intro">Benchmarks are evidence for a particular build, corpus and machine—not universal rank claims.</p>
-  </div>
+          <div class="metric-pair">
+            <div>
+              <small id="raw-label">raw zstd19</small>
+              <strong id="raw-primary">—</strong>
+              <span id="raw-secondary">—</span>
+            </div>
 
-  <div class="grid three">
-    <article class="card">
-      <span class="tag">reconstruction</span>
-      <h3>Exact restore</h3>
-      <p>Input hash, encoded hash, decoded hash and byte equality where reversibility is claimed.</p>
-    </article>
-    <article class="card">
-      <span class="tag">fixtures</span>
-      <h3>Reproducible corpora</h3>
-      <p>Small pathological fixtures first; enwik-style runs where useful; command lines and toolchain recorded.</p>
-    </article>
-    <article class="card">
-      <span class="tag">adverse results</span>
-      <h3>Keep the losses</h3>
-      <p>Expansion, slow paths and awkward inputs remain visible. A failed hypothesis is still an artifact.</p>
-    </article>
-  </div>
+            <div>
+              <small id="du-label">DU3 + zstd19</small>
+              <strong id="du-primary">—</strong>
+              <span id="du-secondary">—</span>
+            </div>
+          </div>
 
-  <div class="artifact-actions proof-actions">
-    <a class="btn primary" href="projects/rare1.html">Rare1 evidence →</a>
-    <a class="btn ghost" href="projects/tools.html">Public tools →</a>
-    <a class="btn ghost" href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">Repositories ↗</a>
-  </div>
-</section>
+          <div class="tradeoff-strip" aria-label="Visible tradeoff">
+            <span>BYTES <strong id="decision-delta-bytes">—</strong></span>
+            <span>WALL <strong id="decision-delta-wall">—</strong></span>
+            <span>NO SYNTHETIC SCORE</span>
+          </div>
+
+          <div id="network-controls" class="network">
+            <div class="network-title">
+              <span>Your effective link</span>
+              <strong id="rate-label">10 Mbps</strong>
+            </div>
+
+            <input
+              id="rate"
+              type="range"
+              min="-1.252"
+              max="3"
+              step=".01"
+              value="1"
+              aria-label="Effective network speed"
+            >
+
+            <div class="quick-rates">
+              <button data-rate=".056">56k</button>
+              <button data-rate="1">1M</button>
+              <button data-rate="3">3M</button>
+              <button data-rate="5">5M</button>
+              <button data-rate="10">10M</button>
+              <button data-rate="100">100M</button>
+              <button data-rate="1000">1G</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel decision-side">
+          <small>RESULT</small>
+          <strong id="decision-callout">—</strong>
+          <p id="decision-note"></p>
+
+          <div class="scope-tags">
+            <span>MEASURED</span>
+            <span>EXACT DU3</span>
+            <span>ZSTD REFERENCE</span>
+          </div>
+        </article>
+      </div>
+
+      <p class="note">
+        Current transport comparisons use zstd as a widely available reference
+        entropy backend. Entropy coding is pluggable and is not part of DU3.
+        Views expose different optimization dimensions rather than a single
+        synthetic score.
+      </p>
+    </section>
 
 
-<section id="next" class="section">
-  <div class="section-heading"><div><div class="kicker">Next weird things</div><h2>Not everything needs a checkout.</h2></div><p>Small prototypes can graduate into drops only when they have a clean restore story and something worth showing.</p></div>
-  <div class="grid">
-    <article class="card"><span class="tag">queued</span><h3>Rubik coder</h3><p>Permutation/cube mechanics as a reversible coding toy. Visual state, deterministic inverse, puzzle energy.</p></article>
-    <article class="card"><span class="tag">defensive lab</span><h3>Ghostglyph</h3><p>Unicode ghost inspector: expose zero-width, bidi, variation-selector, control and non-printable codepoints in text or model output; normalize or reject suspicious streams.</p><a href="lab/restricted.html">Open lab boundary →</a></article>
-  </div>
-</section>
+    <section id="playground" class="section shell">
+      <span class="kicker">03 / PLAYGROUND</span>
+      <h2>Open a file.<br>See what the machine sees.</h2>
 
-<section id="research" class="section split">
-  <div>
-    <div class="kicker">Research / construction visible</div>
-    <h2>The toys are the front door.</h2>
-    <p>Behind them: reversible transductions, token streams, sidebands, structural dictionaries, local prediction and the question of what representation should exist before a model ever sees the data.</p>
-    <div class="cta"><a class="btn primary" href="research/working-note-001.html">Working Note 001 →</a><a class="btn" href="projects/rare1.html">Rare1 RFC →</a><a class="btn" href="projects/tools.html">Open toolchain →</a></div>
-  </div>
-  <div class="research-ticket">
-    <div class="kicker">Private dossier / strategic licensing</div>
-    <div class="dossier-price">by inquiry</div>
-    <p>For labs, founders or organizations that want the deeper architecture, private prototypes, technical review or a scoped research transfer. Not an impulse-buy PDF.</p>
-    <a class="btn" href="mailto:green@okcompressor.com?subject=OKC%20private%20research%20dossier">Open a serious thread ↗</a>
-  </div>
-</section>
+      <div class="loader-grid">
+        <div class="dropzone" id="dropzone">
+          <input id="file-input" type="file"
+                 accept=".pdf,.md,.txt,.html,.json,.csv,application/pdf,text/*">
+          <div class="drop-copy">
+            <small>LOCAL ONLY</small>
+            <strong>Drop a PDF, Markdown or text file.</strong>
+            <p>
+              Nothing is uploaded. The browser reads the bytes locally.
+              Today: byte inspector. Next: DU3 V1G structural roundtrip in WASM.
+            </p>
+            <button id="pick-file" class="button primary" type="button">
+              Choose file
+            </button>
+          </div>
+        </div>
 
-<section id="public" class="section">
-  <div class="section-heading"><div><div class="kicker">Public trail</div><h2>The strange shelf has receipts underneath.</h2></div><p>Existing public work remains the trust layer. The shop does not replace the proof trail.</p></div>
-  <div class="grid">
-    <article class="card report-card"><span class="tag">public RFC</span><h3>Rare1</h3><p>Reversible rare-token sidebands and exact reconstruction experiments.</p><a href="projects/rare1.html">Read →</a></article>
-    <article class="card report-card"><span class="tag">Rust / Python</span><h3>Redumb + DUMB</h3><p>Reversible transforms and representation experiments.</p><a href="projects/tools.html#redumb">Open tools →</a></article>
-    <article class="card report-card"><span class="tag">GitHub</span><h3>OKCompressor public repos</h3><p>Code, benchmarks, RFC notes and the rough historical trail.</p><a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">Browse GitHub ↗</a></article>
-  </div>
-</section>
+        <div class="inspect">
+          <div class="inspect-head">
+            <span id="inspect-name">waiting for input</span>
+            <span id="inspect-state">IDLE</span>
+          </div>
 
-<section id="fund" class="section fund-grid">
-  <div class="drop-card">
-    <div class="kicker">Commission</div>
-    <h2>Custom reversible systems.</h2>
-    <p>Scoped codecs, representation transforms, carrier formats, benchmark harnesses and small machines built around a concrete constraint.</p>
-    <div class="cta"><a class="btn primary" href="mailto:blue@okcompressor.com?subject=OKC%20commission">Commission ↗</a></div>
-  </div>
-  <div class="drop-card">
-    <div class="kicker">Fund the next experiment</div>
-    <h2>Money is allowed to be useful.</h2>
-    <p>Fund a benchmark, sponsor a drop, or support a contained research experiment. No committee theatre required.</p>
-    <div class="cta"><a class="btn primary" href="mailto:blue@okcompressor.com?subject=Funding%20OKC">Funding ↗</a><a class="btn" href="support.html">Support model →</a></div>
-  </div>
-  <div class="drop-card">
-    <div class="kicker">Collaborate / license</div>
-    <h2>Bring a concrete question.</h2>
-    <p>Commercial integration, technical transfer, compression, token representation, local AI, reversible formats or independent reproduction.</p>
-    <div class="cta"><a class="btn primary" href="mailto:blue@okcompressor.com?subject=OKC%20collaboration">Start thread ↗</a><a class="btn" href="contact.html">Routing guide →</a></div>
-  </div>
-</section>
+          <div class="inspect-stats">
+            <div><small>bytes</small><strong id="inspect-bytes">—</strong></div>
+            <div><small>read</small><strong id="inspect-read">—</strong></div>
+            <div><small>sha-256</small><strong id="inspect-hash-time">—</strong></div>
+          </div>
 
-<section class="section final-signal">
-  <div>
-    <div class="kicker">OKC / independent / artifact-first</div>
-    <h2>Some work is open. Some is licensed. Some is unfinished.</h2>
-    <p>We would rather ship a weird reversible thing with a receipt than a polished claim with no machine behind it.</p>
-  </div>
-  <div class="cta"><a class="btn primary" href="mailto:blue@okcompressor.com?subject=OKC">blue@okcompressor.com ↗</a></div>
-</section>
+          <div class="hash">
+            <small>SHA-256</small>
+            <code id="inspect-hash">—</code>
+          </div>
 
-<div class="license-card shelf-note">
-  <strong>Source / commercial licensing:</strong> mail first. Public source releases follow project maturity; commercial integration is a separate lane.
-  <a href="mailto:blue@okcompressor.com?subject=OKC%20source%20or%20licensing">blue@okcompressor.com</a>
-</div>
+          <div class="hex-head">
+            <small>HEX / first 256 bytes</small>
+            <span>visual loader v0</span>
+          </div>
+          <pre id="hex-view">00  ::  feed me bytes</pre>
+        </div>
+      </div>
 
-</main>
+      <div class="wasm-contract">
+        <div>
+          <small>NEXT / BROWSER DU</small>
+          <strong>file → structure → restore → SHA-256 PASS</strong>
+        </div>
+        <p>
+          Structural transform only. No zstd, Rare1 or zRank in the browser demo.
+          The browser build will track the latest released DU line: inspect the
+          structural representation, restore the original file, and verify SHA-256.
+        </p>
+      </div>
 
-<footer class="footer">
-  <p class="small">© <span data-year></span> OKC / OKCompressor. Independent research tooling. Free human-scale artifacts where marked; source and commercial use by licence.</p>
-  <div class="footer-links"><a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a><a href="licensing.html">LNCL / licensing</a><a href="support.html">Fund / licence</a><a href="contact.html">Contact</a></div>
-</footer>
-<script src="assets/app.js"></script>
+      <p class="note">
+        The public DU lineage defines the browser exposure boundary.
+        Native DU3 releases can advance independently; experimental pipeline
+        work remains outside the client bundle.
+      </p>
+    </section>
+
+    <section id="lab" class="section shell">
+      <span class="kicker">04 / LAB</span>
+      <h2>Small sharp things.</h2>
+
+      <div class="cards">
+        <article class="card hot">
+          <span>NEXT</span>
+          <h3>Browser DU</h3>
+          <p>
+            Run the structural transform locally, inspect what downstream
+            coders receive, then restore the original bytes and verify SHA-256.
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/OKCompressor/redumb" target="_blank" rel="noreferrer">Rust lineage ↗</a>
+            <a href="https://github.com/OKCompressor/dumb_pre" target="_blank" rel="noreferrer">Python reference ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <span>MODULE</span>
+          <h3>Rare1</h3>
+          <p>
+            Optional long-tail transform under active research.
+            Kept as an explicit pipe, separate from the DU3 baseline.
+          </p>
+          <a href="/projects/rare1.html">Open module →</a>
+        </article>
+
+        <article class="card">
+          <span>MODULE</span>
+          <h3>zRank</h3>
+          <p>
+            Experimental model transform behind an explicit pipe boundary.
+            Independent from DU3 and from the entropy backend.
+          </p>
+          <a href="/products/zrank.html">Open module →</a>
+        </article>
+
+        <article class="card">
+          <span>ROADMAP</span>
+          <h3>Bounded reconciliation</h3>
+          <p>
+            The next memory target: merge and gmap32 reached roughly
+            13.2 GiB and 16.8 GiB RSS at 100 GB.
+          </p>
+        </article>
+      </div>
+    </section>
+
+
+    <section id="research" class="section shell">
+      <div class="section-head">
+        <div>
+          <span class="kicker">05 / RESEARCH</span>
+          <h2>The strange shelf stays open.</h2>
+        </div>
+        <p>
+          Receipts, working notes, experimental codecs and older mechanisms
+          stay searchable. DU3 is the active structural baseline; Rare1 and
+          zRank remain optional research modules, not hidden dependencies.
+        </p>
+      </div>
+
+      <div class="cards research-cards">
+        <article class="card">
+          <span>EXPERIMENT</span>
+          <h3>DOE</h3>
+          <p>Older experimental work preserved as part of the research trail.</p>
+          <a href="/products/doe.html">Explore →</a>
+        </article>
+
+        <article class="card">
+          <span>EXPERIMENT</span>
+          <h3>Pongo</h3>
+          <p>Research artifact from the wider OKC codec laboratory.</p>
+          <a href="/products/pongo.html">Explore →</a>
+        </article>
+
+        <article class="card">
+          <span>EXPERIMENT</span>
+          <h3>ZXSynth</h3>
+          <p>Synthetic and structural experiments from the archive.</p>
+          <a href="/products/zxsynth.html">Explore →</a>
+        </article>
+
+        <article class="card">
+          <span>EXPERIMENT</span>
+          <h3>OCK Rotor</h3>
+          <p>Earlier codec machinery, preserved for reference and reuse.</p>
+          <a href="/products/ock-rotor.html">Explore →</a>
+        </article>
+      </div>
+
+      <div class="research-links">
+        <a href="/research/working-note-001.html">Working notes →</a>
+        <a href="/research/doe-001.html">Research papers →</a>
+        <a href="/projects/tools.html">Tools →</a>
+      </div>
+    </section>
+
+    <section id="build" class="section shell build">
+      <div>
+        <span class="kicker">06 / BUILD</span>
+        <h2>Your data has structure.<br>Use it.</h2>
+      </div>
+
+      <div>
+        <p>
+          Need a custom structural codec, model-facing transform,
+          data-plane experiment or integration? Built in Galicia; designed
+          for local compute, storage and edge workloads.
+        </p>
+        <div class="cta">
+          <a class="button primary" href="/contact.html">Build a custom coder</a>
+          <a class="button" href="/licensing.html">Licensing</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <strong>OKC</strong>
+    <span>Experimental structural codecs · receipts before narrative.</span>
+    <span>EN first · PT / GL queued</span>
+  </footer>
+
+  <script src="/assets/prime.js"></script>
 </body>
 </html>
