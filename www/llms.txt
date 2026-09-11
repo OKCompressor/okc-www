@@ -1,31 +1,44 @@
 # OKCompressor / OKC
 
-OKC builds small reversible machines for information: compression experiments, byte rotors, corpus tools and reproducible research artifacts.
+OKC builds reversible information systems: structural codecs,
+model-facing transforms, experimental coders and reproducible research artifacts.
+
+## Current architecture
+
+- DU3 — active reversible structural baseline.
+- Rare1 — optional long-tail transform under active Rust validation.
+- zRank — experimental reversible model transform.
+- Entropy — pluggable; current published measurements use zstd as a reference backend.
 
 ## Important pages
 
-- /index.html — public shelf and current drops
-- /products/ock-rotor.html — OCK Rotor Free / source-commercial boundary
-- /licensing.html — Luna Non-Commons v1.1 and commercial boundary
-- /contact.html — inquiry/contact routes
-- /projects/tools.html — public tools
+- / — current OKC / DUMBer V1G surface
+- /projects/tools.html — module and tools shelf
+- /projects/rare1.html — Rare1 research module
+- /products/zrank.html — zRank research module
+- /research/working-note-001.html — representation working note
+- /research/doe-001.html — reproducibility working note
+- /licensing.html — licensing boundary
+- /contact.html — builds, integration and research
 
-## Current artifacts
+## Benchmark discipline
 
-- OCK Rotor Free v0.4.0 — public experimental Linux x86_64 prerelease for arbitrary-file reversible byte-rotor experiments.
-  - Repository: https://github.com/OKCompressor/ock-rotor
-  - Release: https://github.com/OKCompressor/ock-rotor/releases/tag/v0.4.0
-  - Artifact ledger: https://github.com/OKCompressor/core/tree/main/drops/ock-rotor/v0.4.0
-- OKPass — PDF/TXT vocabulary extraction and passphrase/key-material generation.
+OKC reports separate dimensions:
+FASTEST, SMALLEST, NETWORK and STRUCTURE.
+
+Intermediate representations are not described as complete archives.
+Exactness boundaries and dataset provenance are stated explicitly.
 
 ## Licensing
 
-- Luna Non-Commons License v1.1: https://github.com/OKCompressor/core/blob/main/docs/LICENSE.md
-- Human experimentation and independent use follow each artifact's published terms.
-- Commercial organizational use, source access, integration and technical transfer are separate agreement lanes.
+Canonical licence:
+https://github.com/OKCompressor/core/blob/main/docs/LICENSE.md
+
+Current licensing line: LNCL 1.2.
+Artifact-specific terms and release files control.
 
 ## Boundaries
 
-- Experimental software.
-- OCK Rotor is not audited encryption.
-- No behavioral tracking or registration is required by OKC for public artifacts.
+Experimental software.
+No hidden dependency between DU3, Rare1, zRank or entropy backends.
+Ganymede remains historical R&D evidence, not the production architecture.
