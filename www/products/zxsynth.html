@@ -1,35 +1,77 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ZXSynth — OKCompressor</title>
-<meta name="description" content="ZXSynth is an experimental reversible data-to-sound and synth representation toy.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0d">
+<meta name="description" content="ZXSynth is an OKC sonic representation experiment exploring deterministic audio-like artifacts with an explicit return path.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZXSynth — Reversible sonic experiment | OKC">
+<meta property="og:description" content="ZXSynth is an OKC sonic representation experiment exploring deterministic audio-like artifacts with an explicit return path.">
+<meta name="twitter:card" content="summary">
+<title>ZXSynth — Reversible sonic experiment | OKC</title>
+<link rel="icon" href="/favicon.svg">
 <link rel="stylesheet" href="../assets/styles.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/prime-subpages.css">
 </head>
 <body>
-<nav class="nav"><div class="nav-inner"><a class="brand" href="../index.html"><span class="logo">OK</span><span>OKC</span></a><div class="links"><a href="../index.html#drops">Drops</a><a href="../index.html#proofs">Proofs</a><a href="../index.html#research">Research</a><a href="../projects/tools.html">Tools</a><a href="../contact.html">Contact</a></div></div></nav>
-<main data-release-page="zxsynth">
+<nav class="nav"><div class="nav-inner">
+<a class="brand" href="../v1g-prime/"><span class="logo">OKC</span><span>/LAB</span></a>
+<div class="links">
+<a href="../v1g-prime/#scale">Benchmarks</a>
+<a href="../v1g-prime/#playground">Lab</a>
+<a href="../v1g-prime/#research">Research</a>
+<a href="../v1g-prime/#build">Build</a>
+</div>
+</div></nav>
+<main>
+
 <section class="hero product-hero">
 <div>
-<div class="kicker">Drop / reversible sonic branch</div>
-<h1>ZXSynth<br><span class="codepath">.zxs</span></h1>
-<p class="lead">A more elaborate sonic representation experiment: deterministic sound-output artifacts with a route back to the encoded material.</p>
-<div class="cta"><a class="btn primary" href="mailto:blue@okcompressor.com?subject=ZXSynth%20source%20licence">Request source licence ↗</a><a class="btn" href="../index.html#drops">Back to shelf</a></div>
+<div class="kicker">Research artifact / sonic branch</div>
+<h1>ZXSynth<br><span class="codepath">data you can hear.</span></h1>
+<p class="lead">A sonic representation experiment: turn structured data into an audible artifact, preserve the inverse, and keep the claim boundary explicit.</p>
+<div class="cta">
+<a class="btn primary" href="mailto:blue@okcompressor.com?subject=ZXSynth%20custom%20coder">Commission a sonic coder ↗</a>
+<a class="btn" href="/v1g-prime/#research">Back to Research</a>
 </div>
-<div class="hero-card"><div class="terminal"><div><span class="prompt">$</span> zxsynth encode input -o signal.zxs</div><div>sonic artifact generated</div><div class="line-gap"></div><div><span class="prompt">$</span> zxsynth decode signal.zxs</div><div class="good">ROUNDTRIP: expected by format contract</div><div class="warn">STATUS: advanced research toy</div></div></div>
+<div class="prime-badges"><span>SONIC</span><span>REVERSIBLE</span><span>EXPERIMENTAL</span></div>
+</div>
+<div class="hero-card"><div class="terminal">
+<div><span class="prompt">$</span> zxsynth encode input</div>
+<div>structure → sonic artifact</div>
+<div class="line-gap"></div>
+<div><span class="prompt">$</span> zxsynth decode signal</div>
+<div class="good">inverse is part of the format contract</div>
+</div></div>
 </section>
+
 <section class="section split">
-<div><div class="kicker">What it is</div><h2>A synth that remembers what it meant.</h2><p>The existing Python prototype can remain the public branch. The advanced/native branch is where deeper representation, sound/compression experiments and premium source can live.</p></div>
-<div class="card"><div class="price-line"><span>Runnable artifact</span><strong>queued / €0</strong></div><div class="price-line"><span>Source licence</span><strong>inquiry</strong></div><div class="price-line"><span>Commercial integration</span><strong>contact</strong></div></div>
+<div><div class="kicker">Research question</div><h2>Can an encoded artifact remain experiential?</h2>
+<p>ZXSynth treats output as something a human can perceive, not just a byte blob. That makes it useful as a playground for deterministic synthesis, carrier design and reversible media experiments.</p></div>
+<div class="card"><span class="tag">Boundary</span><h3>Not a security primitive.</h3><p>Obfuscation, encryption and reversibility are separate properties. Any release should state exactly which one it proves.</p></div>
 </section>
+
 <section class="section">
-<div class="section-heading"><div><div class="kicker">Package contract</div><h2>Small surface. Explicit boundary.</h2></div></div>
-<div class="grid"><article class="card"><span class="tag">sound</span><h3>Sonic output</h3><p>Representation is audible, inspectable and intentionally strange.</p></article><article class="card"><span class="tag">format</span><h3>.zxs contract</h3><p>Artifact format and restoration rules travel together.</p></article><article class="card"><span class="tag">source</span><h3>Premium branch</h3><p>The advanced implementation is a paid source/licensing surface, not giveaway code.</p></article></div>
+<div class="section-heading"><div><div class="kicker">Build</div><h2>Keep the toy. Extract the mechanism.</h2></div><p>A production engagement can reuse the reversible core while changing carrier, codec, latency target or output format.</p></div>
+<div class="grid">
+<article class="card"><span class="tag">format</span><h3>Sonic carrier</h3><p>An explicit artifact contract instead of an unnamed blob.</p></article>
+<article class="card"><span class="tag">receipt</span><h3>Inverse first</h3><p>Roundtrip and hashes before aesthetic claims.</p></article>
+<article class="card"><span class="tag">custom</span><h3>Domain variant</h3><p>Audio, telemetry or another constrained output surface can become the next experiment.</p><a href="../contact.html">Bring a constraint →</a></article>
+</div>
 </section>
-<section class="section license-card"><strong>Licence boundary:</strong> the free artifact, source snapshot and commercial rights are separate things. Exact licence text ships with the release; see <a href="../licensing.html">LNCL / licensing</a>. No cryptographic-security claim is implied by reversibility or obfuscation.</section>
-<section class="section release-dynamic"><div class="kicker">Live release manifest</div><div data-release-page-summary class="card">Loading releases.json…</div></section>
+
 </main>
-<footer class="footer"><p class="small">© <span data-year></span> OKC / OKCompressor.</p><div class="footer-links"><a href="../index.html">Home</a><a href="../contact.html">Contact</a><a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a></div></footer>
+<footer class="footer">
+<p>Built in Galicia · local-first systems research.</p>
+<div class="footer-links">
+<a href="../v1g-prime/">OKC</a>
+<a href="../licensing.html">Licensing</a>
+<a href="../contact.html">Contact</a>
+<a href="https://github.com/OKCompressor" target="_blank" rel="noreferrer">GitHub</a>
+</div>
+</footer>
 <script src="../assets/app.js"></script>
-</body></html>
+</body>
+</html>
